@@ -1,5 +1,5 @@
 {
-  "name": "~TODO~",
+  "name": "svelte-choo-choo",
   "version": "0.0.1",
   "scripts": {
     "dev": "svelte-kit dev",
@@ -12,8 +12,10 @@
   },
   "devDependencies": {
     "@sveltejs/kit": "next",
+    "@sveltejs/svelte-repl": "^0.2.2",
     "@typescript-eslint/eslint-plugin": "^4.19.0",
     "@typescript-eslint/parser": "^4.19.0",
+    "codemirror": "^5.62.2",
     "eslint": "^7.22.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-svelte3": "^3.2.0",
@@ -21,9 +23,11 @@
     "prettier-plugin-svelte": "^2.2.0",
     "svelte": "^3.34.0",
     "svelte-check": "^2.0.0",
+    "svelte-highlight": "^3.2.0",
     "svelte-preprocess": "^4.0.0",
     "tslib": "^2.0.0",
-    "typescript": "^4.0.0"
+    "typescript": "^4.0.0",
+    "vite": "^2.4.4"
   },
   "type": "module"
 }
