@@ -1,1 +1,1 @@
-<a href="/pages/1">Start</a>
+<a href="/pages/ReactLogo">Start</a>

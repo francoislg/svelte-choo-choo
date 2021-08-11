@@ -1,27 +1,39 @@
 <script lang="ts">
-	import Repl from '@sveltejs/svelte-repl';
 	import { onMount } from 'svelte';
 
-	export let code: string = '';
+	export let components: Array<{
+		name: string;
+		source: string;
+		type?: string;
+	}> = [];
 	let set;
 
-	onMount(() => {
-		if (code) {
-			const defaultComponent = {
-				name: 'App',
-				type: 'svelte',
-				source: code
-			};
+	let ReplComponent;
 
-			const data = {
-				components: [defaultComponent]
-			};
-
-			set(data);
-		}
+	onMount(async () => {
+		ReplComponent = (await import('@sveltejs/svelte-repl')).default;
 	});
+
+	$: {
+		if (set && components) {
+			set({
+				components: components.map((c, index) => ({
+					// App is required on the first file somehow, otherwise an error is thrown :shrug:
+					name: index === 0 ? 'App' : c.name,
+					source: c.source,
+					type: c.type || 'svelte'
+				}))
+			});
+		}
+	}
 </script>
 
 <div style="height: 95%">
-	<Repl workersUrl="/node_modules/@sveltejs/svelte-repl/workers" bind:set relaxed embedded />
+	<svelte:component
+		this={ReplComponent}
+		workersUrl="/workers"
+		bind:set
+		relaxed
+		embedded
+	/>
 </div>

@@ -4,7 +4,7 @@
 	import { draw } from 'svelte/transition';
 </script>
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32"
 	><g transform="matrix(.05696 0 0 .05696 .647744 2.43826)" fill="none" fill-rule="evenodd"
 		><circle r="50.167" cy="237.628" cx="269.529" fill="#00d8ff" /><g
 			stroke="#00d8ff"

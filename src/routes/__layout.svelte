@@ -4,7 +4,11 @@
 	import { onMount } from 'svelte';
 	import { page as currentPage } from '$app/stores';
 	import { browser } from '$app/env';
-	import github from 'svelte-highlight/src/styles/github';
+	import github from 'svelte-highlight/src/styles/github-dark';
+	import FixedFooter from '../lib/FixedFooter.svelte';
+	import Jump from '../lib/Jump.svelte';
+
+	let showFooter: boolean = false;
 
 	function handleKeydown(event: KeyboardEvent) {
 		if (!(event.target instanceof HTMLTextAreaElement)) {
@@ -14,14 +18,17 @@
 			if (event.code === 'ArrowLeft') {
 				page.previous();
 			}
+			if (event.code === 'KeyJ') {
+				showFooter = !showFooter;
+			}
 		}
 	}
 
 	onMount(() => {
 		const initialPath = browser && !!$currentPage ? $currentPage.path : '';
 		const initialPage = initialPath.includes('/pages/')
-			? parseInt(initialPath.substring(initialPath.indexOf('/pages/') + 7))
-			: 1;
+			? initialPath.substring(initialPath.indexOf('/pages/') + 7)
+			: "/ReactLogo";
 		console.log('Setting to initial page', initialPage);
 		page.initialize(initialPage);
 	});
@@ -33,15 +40,42 @@
 
 <svelte:head>
 	{@html github}
-	<link rel="stylesheet" href="/repl.css" />
 </svelte:head>
 
 <svelte:window on:keydown={handleKeydown} />
 
+{#if showFooter}
+	<FixedFooter>
+		<Jump />
+	</FixedFooter>
+{/if}
+
 <style>
-	:global(html, body, #svelte) {
-		overflow: hidden;
-		height: 100%;
+	:global(*) {
 		box-sizing: border-box;
+	}
+
+	:global(html, body, #svelte) {
+		overflow: scroll;
+		overflow-x: hidden;
+		height: 100%;
+		scrollbar-width: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	:global(body) {
+		padding: 10px;
+	}
+
+	:global(h1, h2, h3) {
+		/* Little hack to prevent the page from scrolling 🙈 */
+		margin: 0px;
+		padding: 10px 0px;
+	}
+
+	:global(::-webkit-scrollbar) {
+		width: 0;
+		background: transparent;
 	}
 </style>
