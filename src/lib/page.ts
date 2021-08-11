@@ -11,7 +11,7 @@ const TwoWayBinding = [
     "TwoWayBinding/SplashScreen",
     "TwoWayBinding/React",
     "TwoWayBinding/Svelte",
-    "TwoWayBinding/Components",
+    // "TwoWayBinding/Components",
     "TwoWayBinding/IRLExample",
 ];
 
@@ -21,8 +21,8 @@ const Stores = [
     "Stores/React",
     "Stores/ReactPart2",
     "Stores/Svelte",
-    "Stores/SvelteExample",
-    "Stores/IRLExampleHistory",
+    // "Stores/SvelteExample",
+    // "Stores/IRLExampleHistory",
     "Stores/IRLExamplePopup",
 ];
 
@@ -50,7 +50,7 @@ const QOL = [
     "QOL/SplashScreen",
     "QOL/Class",
     "QOL/Context",
-    "QOL/SVG",
+    // "QOL/SVG",
 ];
 
 const SvelteKit = [
@@ -58,6 +58,7 @@ const SvelteKit = [
 ];
 
 const PAGES = [
+    "First",
     "ReactLogo",
     "SvelteLogo",
     "Moi",
@@ -70,7 +71,7 @@ const PAGES = [
     ...Slots,
     ...QOL,
     ...SvelteKit,
-    "MissingStuff",
+    // "MissingStuff",
     "NextSteps",
     "Thanks",
 ];

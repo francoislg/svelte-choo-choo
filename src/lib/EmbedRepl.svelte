@@ -1,4 +1,5 @@
 <script lang="ts">
+	export const ssr = false;
 	import { onMount } from 'svelte';
 
 	export let components: Array<{
@@ -11,11 +12,13 @@
 	let ReplComponent;
 
 	onMount(async () => {
+		await (import('codemirror/addon/display/fullscreen.js'));
+		console.log()
 		ReplComponent = (await import('@sveltejs/svelte-repl')).default;
 	});
 
 	$: {
-		if (set && components) {
+		if (!!set && components) {
 			set({
 				components: components.map((c, index) => ({
 					// App is required on the first file somehow, otherwise an error is thrown :shrug:
@@ -28,12 +31,6 @@
 	}
 </script>
 
-<div style="height: 95%">
-	<svelte:component
-		this={ReplComponent}
-		workersUrl="/workers"
-		bind:set
-		relaxed
-		embedded
-	/>
+<div style="position: relative; height: 95%; width: 100%">
+	<svelte:component this={ReplComponent} workersUrl="/workers" bind:set on:change={(args) => console.log(args)} />
 </div>

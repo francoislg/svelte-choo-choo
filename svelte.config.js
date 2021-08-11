@@ -1,4 +1,7 @@
 import preprocess from 'svelte-preprocess';
+// import node from "@sveltejs/adapter-node";
+// import adapterStatic from "@sveltejs/adapter-static";
+import netlify from "@sveltejs/adapter-netlify";
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -9,11 +12,13 @@ const config = {
 	kit: {
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
+		adapter: netlify(),
 		vite: {
 			optimizeDeps: {
 				include: [
 					"highlight.js/lib/core",
 					"marked/src/marked.js",
+					"codemirror/addon/display/autorefresh.js",
 					// Picked up from /node_modules/@sveltejs/svelte-repl/src/codemirror.js
 					"codemirror",
 					"codemirror/mode/javascript/javascript.js",

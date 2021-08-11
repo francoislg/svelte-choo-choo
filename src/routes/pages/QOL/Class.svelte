@@ -7,8 +7,10 @@
 	let color = 'blue';
 	let colored = false;`,
 		`
-<div class="square {color}" class:colored></div>
+<div class="square" class:colored></div>
 <div><input type="checkbox" bind:checked={colored} /></div>
+
+<div class="square colored {color}"></div>
 <div><input bind:value={color} /></div>
 `, `
 .square { width: 50px; height: 50px; border: 2px solid black }
