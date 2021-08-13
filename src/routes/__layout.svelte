@@ -51,6 +51,10 @@
 {/if}
 
 <style>
+	:global(:root) {
+		font-family: "canada-type-gibson", "Mier B", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	}
+
 	:global(*) {
 		box-sizing: border-box;
 	}
@@ -72,6 +76,13 @@
 		/* Little hack to prevent the page from scrolling 🙈 */
 		margin: 0px;
 		padding: 10px 0px;
+		font-weight: 400;
+	}
+
+	:global(h3) {
+		font-size: 3em;
+		margin-top: 30px;
+		margin-bottom: 30px;
 	}
 
 	:global(::-webkit-scrollbar) {

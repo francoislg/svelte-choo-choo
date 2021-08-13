@@ -1,6 +1,7 @@
 <script lang="ts">
 	export const ssr = false;
 	import { onMount } from 'svelte';
+	import CoveoShape from "$lib/style/CoveoShape.svelte"
 
 	export let components: Array<{
 		name: string;
@@ -31,6 +32,8 @@
 	}
 </script>
 
-<div style="position: relative; height: 95%; width: 100%">
+<div style="position: relative; height: 80%; width: 100%">
 	<svelte:component this={ReplComponent} workersUrl="/workers" bind:set on:change={(args) => console.log(args)} />
 </div>
+
+<CoveoShape width={800} color='green' position='bottom' />

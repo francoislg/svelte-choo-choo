@@ -4,6 +4,7 @@
 
 <style>
     .card {
+        background-color: var(--background);
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         padding: 2px 16px;
         height: 200px;

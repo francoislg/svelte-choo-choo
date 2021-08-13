@@ -3,6 +3,7 @@
 	import { fly } from 'svelte/transition';
 	import Card from '$lib/style/Card.svelte';
     import Grid from "$lib/layouts/SimpleGrid.svelte";
+    import Hearts from "$lib/Hearts.svelte";
 </script>
 
 <div>
@@ -11,12 +12,10 @@
 		<h3 in:fly={{ delay: $animationDelay * 2 }}>Personel</h3>
 		<Grid>
 			<div in:fly={{ delay: $animationDelay * 2 }}><Card>0 talks</Card></div>
-			<div in:fly={{ delay: $animationDelay * 3 }}><Card>0 applications lancées par moi-même en production</Card></div>
-			<div in:fly={{ delay: $animationDelay * 4 }}>
-				<Card>5 ans chez Coveo dans l'équipe de Commerce (Full-stack, spécialiste front-end)</Card>
-			</div>
+			<div in:fly={{ delay: $animationDelay * 3 }}><Card>0 start-up</Card></div>
+			<div in:fly={{ delay: $animationDelay * 4 }}><Card>0 applications lancées par moi-même en production</Card></div>
 			<div in:fly={{ delay: $animationDelay * 5 }}>
-				<Card>Très bonne expertise React + Redux</Card>
+				<Card>5 ans chez Coveo dans l'équipe de Commerce (Full-stack, spécialiste front-end)</Card>
 			</div>
 		</Grid>
 	</div>
@@ -29,13 +28,21 @@
 				<Card>Réécriture complète d'une moyenne app (pas encore lancée) de React à Svelte</Card>
 			</div>
 			<div in:fly={{ delay: $animationDelay * 11 }}>
-				<Card>♥️</Card>
+				<Card>
+					<Hearts />
+				</Card>
 			</div>
 		</Grid>
 	</div>
 </div>
 
 <style>
+	img {
+		border-radius: 500px;
+		width: 500px;
+		height: 500px;
+	}
+
 	.achievements {
 		display: flex;
 		flex-wrap: wrap;

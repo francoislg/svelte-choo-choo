@@ -3,8 +3,10 @@
 	import { fly } from 'svelte/transition';
 	import Card from '$lib/style/Card.svelte';
     import Grid from "$lib/layouts/SimpleGrid.svelte";
+import CoveoShape from '$lib/style/CoveoShape.svelte';
 </script>
 
+<CoveoShape width={800} color='blue' position='bottom' />
 
 <h3>Sujets pour aujourd'hui</h3>
 <div class="subjects">
@@ -19,6 +21,8 @@
 		<div in:fly={{ delay: $animationDelay * 8 }}><Card>Svelte Kit</Card></div>
 	</Grid>
 </div>
+
+
 
 <style>
 	.subjects {
