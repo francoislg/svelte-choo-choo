@@ -11,14 +11,15 @@
 
   $: allChecked = checkedList.every(c => c);
   $: noneChecked = checkedList.every(c => !c)`,
-`
+			`
 <Checkbox label="Allo" bind:checked={checkedList[0]} />
 <Checkbox label="Toi" bind:checked={checkedList[1]} />
 <div>All? {allChecked}</div>
 <div>None? {noneChecked}</div>
  `
 		),
-		oneSvelteComp("Checkbox",
+		oneSvelteComp(
+			'Checkbox',
 			`
   export let label;
   export let checked;`,

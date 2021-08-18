@@ -8,7 +8,6 @@
 	import SvelteIcon from '$lib/icons/svelte-icon.svelte';
 	import Boxdown from '$lib/icons/boxdown.svelte';
 	import Clock from '$lib/icons/clock.svelte';
-	import Partner from '$lib/icons/partner.svelte';
 	import Explorer from '$lib/icons/explorer.svelte';
 	import Lightning from '$lib/icons/lightning.svelte';
 	import Purse from '$lib/icons/purse.svelte';
@@ -20,48 +19,45 @@
 	<h3>Sujets pour aujourd'hui</h3>
 	<div class="subjects">
 		<Grid>
-			<div in:fly={{ delay: $animationDelay * 1 }}>
+			<div in:fly={{ delay: $animationDelay / 2 }}>
 				<Card
 					>Introduction à Svelte
 					<div slot="icon"><SvelteIcon /></div></Card
 				>
 			</div>
-			<div in:fly={{ delay: $animationDelay * 2 }}>
+			<div in:fly={{ delay: $animationDelay }}>
 				<Card>Two-Way Binding <Sign slot="icon" /></Card>
 			</div>
-			<div in:fly={{ delay: $animationDelay * 3 }}><Card>Stores <Boxdown slot="icon" /></Card></div>
-			<div in:fly={{ delay: $animationDelay * 4 }}><Card>#await <Clock slot="icon" /></Card></div>
-			<div in:fly={{ delay: $animationDelay * 5 }}>
-				<Card>Animations <Partner slot="icon" /></Card>
-			</div>
-			<div in:fly={{ delay: $animationDelay * 6 }}>
+			<div in:fly={{ delay: $animationDelay / 2 * 3 }}><Card>Stores <Boxdown slot="icon" /></Card></div>
+			<div in:fly={{ delay: $animationDelay / 2 * 4 }}><Card>#await <Clock slot="icon" /></Card></div>
+			<div in:fly={{ delay: $animationDelay / 2 * 5 }}>
 				<Card>Slots VS Children <Explorer slot="icon" /></Card>
 			</div>
-			<div in:fly={{ delay: $animationDelay * 7 }}>
+			<div in:fly={{ delay: $animationDelay / 2 * 6 }}>
 				<Card>Quality of Life Potpourri <Lightning slot="icon" /></Card>
 			</div>
-			<div in:fly={{ delay: $animationDelay * 8 }}>
+			<div in:fly={{ delay: $animationDelay / 2 * 7 }}>
 				<Card>Svelte Kit <Purse slot="icon" /></Card>
 			</div>
 		</Grid>
 	</div>
-	<h3 in:fly={{ delay: $animationDelay * 9 }}>Projets utilisés</h3>
+	<!-- <h3 in:fly={{ delay: $animationDelay / 2 * 9 }}>Projets utilisés</h3>
 	<Grid>
-		<div in:fly={{ delay: $animationDelay * 10 }}>
+		<div in:fly={{ delay: $animationDelay / 2 * 10 }}>
 			<Card
 				><div>Coveo Innovate</div>
 				<img slot="icon" width="32" src="/innovate.png" alt="innovate" /></Card
 			>
 		</div>
-		<div in:fly={{ delay: $animationDelay * 11 }}>
+		<div in:fly={{ delay: $animationDelay / 2 * 11 }}>
 			<Card
 				><div>Coveo Blitz</div>
 				<img slot="icon" width="32" src="/blitz.png" alt="blitz" /></Card
 			>
 		</div>
-		<div in:fly={{ delay: $animationDelay * 12 }}><Card>Cooktree</Card></div>
-		<div in:fly={{ delay: $animationDelay * 13 }}><Card>?? Surprise ??</Card></div>
-	</Grid>
+		<div in:fly={{ delay: $animationDelay / 2 * 12 }}><Card>Cooktree</Card></div>
+		<div in:fly={{ delay: $animationDelay / 2 * 13 }}><Card>?? Surprise ??</Card></div>
+	</Grid> -->
 </div>
 
 <style>

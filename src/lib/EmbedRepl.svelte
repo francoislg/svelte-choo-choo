@@ -51,7 +51,6 @@
 
 <CoveoShape width={800} color="green" position="bottom" />
 
-
 <style>
 	.title {
 		display: block;

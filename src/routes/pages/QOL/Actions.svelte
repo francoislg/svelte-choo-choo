@@ -33,14 +33,18 @@ function party(node, {frames}) {
 		}
 	};
 }`,
-`
+			`
 <label>
 	Huge party?
 	<input type="checkbox" bind:checked={isHugeParty} />
 </label>
 <img use:party={{frames: isHugeParty ? hugePartyFrames : miniPartyFrames}} alt="party" />
 <img use:party={{frames: isHugeParty ? hugePartyFrames : miniPartyFrames}} alt="party" />
-`), oneTypeScriptComp("Parties", `
+`
+		),
+		oneTypeScriptComp(
+			'Parties',
+			`
 export const hugePartyFrames = [
 	"/party/frame0.gif",
 	"/party/frame1.gif",
@@ -53,7 +57,9 @@ export const hugePartyFrames = [
 	"/party/frame8.gif",
 	"/party/frame9.gif"
 ];
-export const miniPartyFrames = hugePartyFrames.slice(0, 2);`)];
+export const miniPartyFrames = hugePartyFrames.slice(0, 2);`
+		)
+	];
 </script>
 
 <EmbedRepl title="QOL - Actions" {components} />

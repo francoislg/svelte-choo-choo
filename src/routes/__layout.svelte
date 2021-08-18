@@ -7,8 +7,8 @@
 	import github from 'svelte-highlight/src/styles/github-dark';
 	import FixedFooter from '../lib/FixedFooter.svelte';
 	import Jump from '../lib/Jump.svelte';
-import { getLayoutContext, setLayoutContext } from '../lib/LayoutContext';
-import CoveoLogo from '../lib/CoveoLogo.svelte';
+	import { getLayoutContext, setLayoutContext } from '../lib/LayoutContext';
+	import CoveoLogo from '../lib/CoveoLogo.svelte';
 
 	setLayoutContext();
 	const layoutContext = getLayoutContext();
@@ -24,7 +24,7 @@ import CoveoLogo from '../lib/CoveoLogo.svelte';
 				page.previous();
 			}
 			if (event.code === 'KeyJ') {
-				 showFooter = !showFooter;
+				showFooter = !showFooter;
 			}
 		}
 	}
@@ -33,7 +33,7 @@ import CoveoLogo from '../lib/CoveoLogo.svelte';
 		const initialPath = browser && !!$currentPage ? $currentPage.path : '';
 		const initialPage = initialPath.includes('/pages/')
 			? initialPath.substring(initialPath.indexOf('/pages/') + 7)
-			: "/ReactLogo";
+			: '/ReactLogo';
 		console.log('Setting to initial page', initialPage);
 		page.initialize(initialPage);
 	});
@@ -61,7 +61,8 @@ import CoveoLogo from '../lib/CoveoLogo.svelte';
 
 <style>
 	:global(:root) {
-		font-family: "canada-type-gibson", "Mier B", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+		font-family: 'canada-type-gibson', 'Mier B', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+			Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 	}
 
 	:global(*) {

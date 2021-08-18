@@ -15,7 +15,7 @@ import Tab from "./Tab.svelte";`,
 		<div class="tabs">
 			<Tab tab="recipes" text="MES RECETTES" />
 			<Tab tab="livre" text="LIVRE DE RECETTES" />
-			<Tab tab="follow" text="ABONEMENTS" />
+			<Tab tab="follow" text="ABONNEMENTS" />
 		</div>
 	</section>
 	<section>
@@ -32,7 +32,8 @@ import Tab from "./Tab.svelte";`,
 			<div>Excellent, beaucoup d'abonnements</div>
 		</TabPanel>
 	</section>
-</TabProvider>`, `
+</TabProvider>`,
+			`
 .tabs {
 		display: flex;
 }`
@@ -58,18 +59,22 @@ setContext('tab', tab);`,
   const selected = getContext('tab');`,
 			`
 {#if tab === $selected}
-  <div in:fly={{ y: -500, duration: 500, delay: 200 }} out:fly={{ y: 200, duration: 200 }}>
+  <div in:fly={{ x: 500, duration: 500, delay: 200 }} out:fly={{ y: 200, duration: 200 }}>
     <slot />
   </div>
 {/if}`
 		),
-		oneSvelteComp("Tab", `
+		oneSvelteComp(
+			'Tab',
+			`
   import { getContext } from 'svelte';
   export let tab;
   export let text;
-  const selected = getContext('tab');`,`
+  const selected = getContext('tab');`,
+			`
 <div class="tab" class:selected={$selected === tab} on:click={() => ($selected = tab)}>{text}</div>
-`,`
+`,
+			`
     .tab {
         cursor: pointer;
         font-weight: bold;
@@ -86,7 +91,8 @@ setContext('tab', tab);`,
     .selected {
         border-bottom: var(--border-size) solid var(--primary-color);
     }
-`)
+`
+		)
 	];
 </script>
 

@@ -3,11 +3,7 @@
 	import { drawThenFill } from '$lib/transitions/draw-then-fill';
 </script>
 
-<svg
-	width="100%"
-	height="100%"
-	viewBox="0 0 199.8 165.6"
->
+<svg width="100%" height="100%" viewBox="0 0 199.8 165.6">
 	<style type="text/css">
 		.st0 {
 			fill: #00adff;
@@ -82,7 +78,7 @@
 				/>
 				<path
 					class="st4"
-					in:drawThenFill={{delay: $animationDelay * 5 }}
+					in:drawThenFill={{ delay: $animationDelay * 5 }}
 					d="M89.3,165 82.9,165 69.6,133.8 75.6,133.8 86.1,159.6 96.6,133.8 102.3,133.8 			"
 				/>
 				<path

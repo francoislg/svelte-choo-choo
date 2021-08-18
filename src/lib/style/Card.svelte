@@ -12,8 +12,9 @@
 		background-color: var(--background);
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 		padding: 2px 16px;
-		height: 200px;
+		height: 150px;
 		border-radius: 5px;
+		text-align: center;
 
 		display: flex;
 		align-items: center;

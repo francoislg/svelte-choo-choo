@@ -4,6 +4,7 @@
 	import { getLayoutContext } from './LayoutContext';
 
 	export let text;
+	export let isLogo = false;
 
 	const layout = getLayoutContext();
 
@@ -16,7 +17,7 @@
 	});
 </script>
 
-<div class="splash">
+<div class="splash" class:isLogo>
 	<h1>
 		{text}
 	</h1>
@@ -43,11 +44,15 @@
 		flex-direction: column;
 	}
 
-    .icon {
-        width: 128px;
-        height: 128px;
+	.isLogo {
+		background-color: white;
+	}
+
+	.icon {
+		width: 128px;
+		height: 128px;
 		fill: white;
-    }
+	}
 
 	h1 {
 		color: white;

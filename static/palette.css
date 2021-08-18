@@ -1,9 +1,9 @@
 :root {
-    --pomegranate: #F05245;
-    --cerulean: #00ADFF;
-    --turbo: #FFE300;
-    --bright-turquoise: #1CEBCF;
+	--pomegranate: #f05245;
+	--cerulean: #00adff;
+	--turbo: #ffe300;
+	--bright-turquoise: #1cebcf;
 
-    --background: white;
-    --splash-color: #451C5C;
+	--background: white;
+	--splash-color: #451c5c;
 }

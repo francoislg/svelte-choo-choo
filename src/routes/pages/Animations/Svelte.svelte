@@ -2,8 +2,15 @@
 	import CodeHighlight from '$lib/CodeHighlight.svelte';
 	import CoveoIcon from '$lib/icons/coveo-icon.svelte';
 	import { wrapScript, wrapStyle } from '$lib/replUtils';
+	import { tick } from 'svelte';
 
 	let visible = true;
+
+	async function repeat() {
+		visible = false;
+		await tick();
+		visible = true;
+	}
 </script>
 
 <div class="pad">
@@ -13,7 +20,7 @@
 			<CoveoIcon />
 		{/if}
 	</div>
-	<button on:click={() => (visible = !visible)}>Repeat</button>
+	<button on:click={repeat}>Repeat</button>
 	<CodeHighlight
 		code={`${wrapScript(`
 	import { animationDelay } from '$lib/page';
@@ -24,7 +31,7 @@
 	height="100%"
 	viewBox="0 0 199.8 165.6"
 >
-	${wrapStyle("...")}
+	${wrapStyle('...')}
 	<g>
 		<g>
 			<path

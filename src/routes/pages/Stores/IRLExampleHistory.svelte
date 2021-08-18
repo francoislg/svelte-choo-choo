@@ -2,7 +2,10 @@
 	import EmbedRepl from '$lib/EmbedRepl.svelte';
 	import { oneSvelteComp, oneTypeScriptComp } from '$lib/replUtils';
 
-	const components = [oneSvelteComp("App", `
+	const components = [
+		oneSvelteComp(
+			'App',
+			`
 	import { createHistory } from './history.js';
 	import Controls from "./Controls.svelte";
 
@@ -11,12 +14,15 @@
 	setInterval(() => {
 		history.push(Math.floor(Math.random() * 50));
 	}, 1000);`,
-		`
+			`
 <h1>The current value is {$history.current}</h1>
 <Controls label="#" {history} />
 
 `
-	), oneTypeScriptComp("history", `import { derived, writable } from 'svelte/store';
+		),
+		oneTypeScriptComp(
+			'history',
+			`import { derived, writable } from 'svelte/store';
 
 export function createHistory() {
 	const list = writable([]);
@@ -49,9 +55,14 @@ export function createHistory() {
 		jump: (page) => index.set(page),
 	}
 }
-`), oneSvelteComp("Controls", `
+`
+		),
+		oneSvelteComp(
+			'Controls',
+			`
 	export let history;
-	export let label;`, `
+	export let label;`,
+			`
 {#if $history.lastIndex > 0}
 	<div>
 		<button class="hidden" class:shown={$history.hasPrevious} on:click={history.previous}
@@ -62,7 +73,8 @@ export function createHistory() {
 		<button class="hidden" class:shown={$history.hasNext} on:click={history.next}>Next</button>
 		<button class="hidden" class:shown={$history.currentIndex !== $history.lastIndex} on:click={() => history.jump($history.lastIndex)}>Current</button>
 	</div>
-{/if}`, `
+{/if}`,
+			`
 .hidden {
 	opacity: 0;
 	pointer-events: none;
@@ -71,7 +83,13 @@ export function createHistory() {
 .hidden.shown {
 	opacity: 1;
 	pointer-events: all;
-}`)];
+}`
+		)
+	];
 </script>
 
-<EmbedRepl title="Stores - Exemple d'historique de la Vraie vie vraie" project="Cooktree" {components} />
+<EmbedRepl
+	title="Stores - Exemple d'historique de la vraie vie vraie"
+	project="Cooktree"
+	{components}
+/>

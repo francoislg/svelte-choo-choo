@@ -9,7 +9,10 @@
 
 {#key refresh}
 	{#if $transition === 'fly'}
-		<div in:fly={{ x: 500, duration: 500, delay: $animationDelay }} out:fly={{ duration: 500, x: -500 }}>
+		<div
+			in:fly={{ x: 500, duration: 500, delay: $animationDelay }}
+			out:fly={{ duration: 500, x: -500 }}
+		>
 			<slot />
 		</div>
 	{:else if $transition === 'fade'}

@@ -1,11 +1,11 @@
 <script>
-    import {fade} from "svelte/transition";
+	import { fade } from 'svelte/transition';
 </script>
 
 <img in:fade out:fade class="coveologo" src="/coveo.png" alt="coveo" />
 
 <style>
-    .coveologo {
+	.coveologo {
 		position: fixed;
 		bottom: 8px;
 		right: 8px;

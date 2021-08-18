@@ -1,8 +1,10 @@
 import { draw } from 'svelte/transition';
 
-const ezRbgToArray = (rgb) => rgb.substring(4, rgb.length-1)
-.replace(/ /g, '')
-.split(',');
+const ezRbgToArray = (rgb) =>
+	rgb
+		.substring(4, rgb.length - 1)
+		.replace(/ /g, '')
+		.split(',');
 
 const rgbWithAlpha = ([r, g, b, a]: number[]) => `rgb(${r} ${g} ${b} / ${(a || 0) * 100}%)`;
 
@@ -10,7 +12,7 @@ export function drawThenFill(node: SVGPathElement, params) {
 	const color = getComputedStyle(node).fill;
 	const rgb = ezRbgToArray(color);
 	const fullDuration = params.duration || 800;
-	const speed = params.fillDuration || (fullDuration / 3);
+	const speed = params.fillDuration || fullDuration / 3;
 	const adjustedDuration = fullDuration - speed;
 
 	const { delay, easing, css } = draw(node, {

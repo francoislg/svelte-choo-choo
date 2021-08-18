@@ -92,4 +92,8 @@ let index = 0;`,
 	];
 </script>
 
-<EmbedRepl title="Stores - Exemple message pop-up de la Vraie vie vraie" project="Coveo Innovate" {components} />
+<EmbedRepl
+	title="Stores - Exemple message pop-up de la vraie vie vraie"
+	project="Coveo Innovate"
+	{components}
+/>

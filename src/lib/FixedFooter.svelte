@@ -1,12 +1,12 @@
 <div class="footer">
-    <slot />
+	<slot />
 </div>
 
 <style>
-    .footer {
-        position: fixed;
-        bottom: 0px;
-        left: 0px;
-        right: 0px;
-    }
+	.footer {
+		position: fixed;
+		bottom: 0px;
+		left: 0px;
+		right: 0px;
+	}
 </style>

@@ -31,7 +31,7 @@
 		>
 	{/each}
 
-    <CodeHighlight code={selectedCode} />
+	<CodeHighlight code={selectedCode} />
 </div>
 
 <style>

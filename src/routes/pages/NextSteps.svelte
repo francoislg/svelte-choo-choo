@@ -9,7 +9,7 @@
 	<h3>Prochaines étapes</h3>
 	<SimpleGrid>
 		<Card>Coveo Blitz?</Card>
-		<Card>On regarde pour les nouveaux projets</Card>
+		<Card>On explore pour les nouveaux projets</Card>
 	</SimpleGrid>
 </div>
 <CoveoShape width={900} color="yellow" position="left" />

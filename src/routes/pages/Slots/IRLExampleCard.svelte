@@ -3,7 +3,7 @@
 	import { oneSvelteComp } from '$lib/replUtils';
 
 	const components = [
-        oneSvelteComp(
+		oneSvelteComp(
 			'App',
 			`
 import CardStyle from "./CardStyle.svelte";
@@ -14,7 +14,7 @@ let showSlots = false;
 let showComplex = false;
 
 function doSomething() {}`,
-`
+			`
 <div class="container">
     <CardStyle>
         C'est tout, rien d'autre!
@@ -50,8 +50,9 @@ function doSomething() {}`,
           }]}
       />
     {/if}
-</div>`, `.container { display: grid; grid-gap: 50px}`
-),
+</div>`,
+			`.container { display: grid; grid-gap: 50px}`
+		),
 		oneSvelteComp(
 			'CardRecipe',
 			`
@@ -212,12 +213,16 @@ function navigateToRecipe() {
     line-height: 1em;
   }`
 		),
-        oneSvelteComp("CardStyle", `
+		oneSvelteComp(
+			'CardStyle',
+			`
   export let fullWidth;
-  export let onClick = undefined;`,`
+  export let onClick = undefined;`,
+			`
 <div class="card{onClick ? ' clickable' : ''}{fullWidth ? ' full-width' : ''}" on:click={onClick}>
   <slot />
-</div>`,`
+</div>`,
+			`
   .card {
     flex: 1;
     box-shadow:  0 0 25px rgb(200, 200, 200, 0.3);
@@ -236,7 +241,8 @@ function navigateToRecipe() {
   }
   .card.clickable {
     cursor: pointer;
-  }`),
+  }`
+		),
 		oneSvelteComp(
 			'TextLink',
 			`
@@ -352,7 +358,7 @@ export let numberOfCookbooks = undefined;`,
     text-align: center;
   }`
 		),
-        oneSvelteComp(
+		oneSvelteComp(
 			'ResponsiveImage',
 			`
   export let data;
@@ -360,11 +366,13 @@ export let numberOfCookbooks = undefined;`,
   export let height = '100%';
   export let width = '100%';
   export let rounded = false;
-`,`
+`,
+			`
 <div class:rounded style="height:{height};width:{width}">
   <img src={data} alt={alt} style="width: 100%; height:100%; object-fit:cover;" />
 </div>
-`,`
+`,
+			`
   .rounded {
     border-radius: 8px;
     overflow: hidden;
@@ -373,4 +381,4 @@ export let numberOfCookbooks = undefined;`,
 	];
 </script>
 
-<EmbedRepl title='Slots - "Card" dans la Vraie vie vraie' project="Cooktree" {components} />
+<EmbedRepl title="Slots - 'Card' de la Vraie vie vraie" project="Cooktree" {components} />

@@ -3,7 +3,9 @@
 	import { oneSvelteComp } from '$lib/replUtils';
 
 	const components = [
-		oneSvelteComp('App', `
+		oneSvelteComp(
+			'App',
+			`
 	import EditHack from "./EditHack.svelte"
 
 	let hack;
@@ -12,12 +14,14 @@
 	function create() {
 		// ...
 	}
-	`, `
+	`,
+			`
 	<EditHack bind:hack let:isNew />
 	<button on:click={create}>{isNew ? 'Create' : 'Update'}</button>
 
 	<div>{JSON.stringify(hack, null, 2)}</div>
-`),
+`
+		),
 		oneSvelteComp(
 			'EditHack',
 			`
@@ -140,4 +144,8 @@
 	];
 </script>
 
-<EmbedRepl title="Two-Way Binding - Example de la vraie vie vraie" project="Coveo Innovate" {components} />
+<EmbedRepl
+	title="Two-Way Binding - Example de la vraie vie vraie"
+	project="Coveo Innovate"
+	{components}
+/>

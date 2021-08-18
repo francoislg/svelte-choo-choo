@@ -1,6 +1,6 @@
 <script>
 	import PresentationLink from '$lib/PresentationLink.svelte';
-import SplashScreen from '$lib/SplashScreen.svelte';
+	import SplashScreen from '$lib/SplashScreen.svelte';
 	import CoveoShape from '$lib/style/CoveoShape.svelte';
 	const liens = [
 		{

@@ -2,7 +2,8 @@
 	import EmbedRepl from '$lib/EmbedRepl.svelte';
 	import { onlyOneSvelteComp } from '$lib/replUtils';
 
-	const components = onlyOneSvelteComp(`
+	const components = onlyOneSvelteComp(
+		`
 let name = 'Heu, Mr Spock?';`,
 		`
 <input bind:value={name} />

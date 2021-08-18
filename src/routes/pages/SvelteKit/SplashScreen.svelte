@@ -18,4 +18,11 @@
 
 <SplashScreen text={serverSide}>
 	<Purse slot="icon" />
+	<!-- <div class="dutexte" >C'est du hot reload</div> -->
 </SplashScreen>
+
+<style>
+	.dutexte {
+		color: white;
+	}
+</style>
