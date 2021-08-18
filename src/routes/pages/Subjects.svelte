@@ -11,6 +11,7 @@
 	import Explorer from '$lib/icons/explorer.svelte';
 	import Lightning from '$lib/icons/lightning.svelte';
 	import Purse from '$lib/icons/purse.svelte';
+import Partner from '$lib/icons/partner.svelte';
 </script>
 
 <CoveoShape width={800} color="blue" position="bottom" />
@@ -38,6 +39,9 @@
 			</div>
 			<div in:fly={{ delay: $animationDelay / 2 * 7 }}>
 				<Card>Svelte Kit <Purse slot="icon" /></Card>
+			</div>
+			<div in:fly={{ delay: $animationDelay / 2 * 8 }}>
+				<Card>Animations <Partner slot="icon" /></Card>
 			</div>
 		</Grid>
 	</div>

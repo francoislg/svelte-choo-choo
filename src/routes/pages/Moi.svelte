@@ -27,18 +27,18 @@
 		</Grid>
 	</div>
 	<div class="achievements">
-		<h4 in:fly={{ delay: $animationDelay * 7 }}>Svelte & Moi</h4>
+		<h4 in:fly={{ delay: $animationDelay * 6 }}>Svelte & Moi</h4>
 		<Grid>
-			<div in:fly={{ delay: $animationDelay * 8 }}>
+			<div in:fly={{ delay: $animationDelay * 6 }}>
 				<Card>Réécriture de notre plateforme de Hackathon Coveo Innovate en Svelte (en cours)</Card>
 			</div>
-			<div in:fly={{ delay: $animationDelay * 9 }}>
+			<div in:fly={{ delay: $animationDelay * 7 }}>
 				<Card>App interne de visualisation des matchs de Coveo Blitz</Card>
 			</div>
-			<div in:fly={{ delay: $animationDelay * 10 }}>
+			<div in:fly={{ delay: $animationDelay * 8 }}>
 				<Card>Réécriture complète d'une moyenne app (pas encore lancée) de React à Svelte</Card>
 			</div>
-			<div in:fly={{ delay: $animationDelay * 11 }}>
+			<div in:fly={{ delay: $animationDelay * 9 }}>
 				<Card>
 					<Hearts />
 				</Card>

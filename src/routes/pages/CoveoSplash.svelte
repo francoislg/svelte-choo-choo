@@ -6,8 +6,10 @@ import PresentationLink from '$lib/PresentationLink.svelte';
 </script>
 
 <SplashScreen text="" isLogo>
-	<CoveoIcon />
-	<PresentationLink />
+	<div class="pad">
+		<CoveoIcon />
+	</div>
+	<PresentationLink color='black' />
 </SplashScreen>
 
 <CoveoShape width={800} color="red" position="right" />

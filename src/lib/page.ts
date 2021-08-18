@@ -47,7 +47,7 @@ const QOL = [
 	// "QOL/SVG",
 ];
 
-const SvelteKit = ['SvelteKit/SplashScreen'];
+const SvelteKit = ['SvelteKit/SplashScreen', 'SvelteKit/Kit'];
 
 const PAGES = [
 	'First',

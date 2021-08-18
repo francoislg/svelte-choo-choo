@@ -7,15 +7,27 @@
 	<h3>Asynchronicité - Svelte Way</h3>
 	<CodeHighlight
 		code={`${wrapScript(`
-let requete = ramasseDesDonnees();
+// ...
+function getConfigurations() {
+	return Platform.catalogConfiguration
+            .list({
+                page: 0,
+                pageSize: 100,
+            });
+}
+
+let requete = getConfigurations();
 function refresh() {
-  requete = ramasseDesDonnees();
+  requete = getConfigurations();
 }`)}
 
 {#await requete}
-  Chargement... S'ra pas long...
-{:then donnees}
-  {donnees}
+  <Loading />
+{:then data}
+  <Button on:click={refresh}>Refresh</Button>
+  {#each data.items as configuration}
+	<Configuration {configuration} />
+  {/each}
 {:catch error}
   OH NON! {error.message}
 {/await}

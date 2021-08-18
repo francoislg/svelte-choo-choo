@@ -16,7 +16,7 @@
     aria-hidden={!isActive}
 >
     <div>
-        <slot name="header" />
+        <slot name="header">Entête</slot>
     </div>
     <slot />
 </div>
@@ -25,7 +25,7 @@
 	<CodeHighlight
 		code={`// TabExamples.Svelte
 <TabPane>
-    <div slot="header">Entête</div>
+    <div slot="header">🙌 Super Entête 🙌</div>
     <div>Contenu du tab</div>
 </TabPane>
 `}

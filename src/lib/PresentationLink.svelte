@@ -1,5 +1,8 @@
-<div class="link">
-	Cette présentation est disponible sur <a href="https://svelte-choo-choo.netlify.app/"
+<script>
+	export let color = 'white';
+</script>
+<div class="link" style="color: {color}">
+	Cette présentation est disponible sur <a style="color: {color}" href="https://svelte-choo-choo.netlify.app/"
 		>https://svelte-choo-choo.netlify.app/</a
 	>
 </div>
@@ -9,11 +12,6 @@
 		position: fixed;
 		top: 10px;
 		left: 10px;
-		color: white;
 		font-size: 2em;
-	}
-
-	.link a {
-		color: white;
 	}
 </style>

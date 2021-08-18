@@ -5,6 +5,7 @@
 	export let width: number;
 	export let color: 'yellow' | 'blue' | 'red' | 'green';
 	export let position: 'bottom' | 'top' | 'left' | 'right';
+	export let delay: number = $animationDelay * 2;
 
 	let realWidth = width / Math.sqrt(2);
 
@@ -64,7 +65,7 @@
 	class="background"
 	style="top: {params.top}px; bottom: {params.bottom}px; left: {params.left}px; right: {params.right}px"
 	in:fly={{
-		delay: $animationDelay * 2,
+		delay,
 		x: params.flyX,
 		y: params.flyY
 	}}
