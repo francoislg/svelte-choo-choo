@@ -27,5 +27,4 @@ export const count = createCount();
 `)];
 </script>
 
-<h3>Stores - Svelte Way</h3>
-<EmbedRepl {components} />
+<EmbedRepl title="Stores - Svelte Way" {components} />

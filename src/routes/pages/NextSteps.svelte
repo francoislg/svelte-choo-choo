@@ -1,8 +1,15 @@
 <script>
-    import CoveoShape from "$lib/style/CoveoShape.svelte";
+	import SimpleGrid from '$lib/layouts/SimpleGrid.svelte';
+	import Card from '$lib/style/Card.svelte';
+
+	import CoveoShape from '$lib/style/CoveoShape.svelte';
 </script>
 
-<h3>Prochaines étapes</h3>
-<div>Blitz, à voir si on ship avec le debugger, en train de regarder pour les nouveaux projets, peut-être dashboards</div>
-
-<CoveoShape width={900} color='yellow' position='left' />
+<div class="pad">
+	<h3>Prochaines étapes</h3>
+	<SimpleGrid>
+		<Card>Coveo Blitz?</Card>
+		<Card>On regarde pour les nouveaux projets</Card>
+	</SimpleGrid>
+</div>
+<CoveoShape width={900} color="yellow" position="left" />

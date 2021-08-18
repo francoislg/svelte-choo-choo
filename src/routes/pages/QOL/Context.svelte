@@ -90,5 +90,4 @@ setContext('tab', tab);`,
 	];
 </script>
 
-<h3>QOL - Context</h3>
-<EmbedRepl {components} />
+<EmbedRepl title="QOL - Context" {components} />

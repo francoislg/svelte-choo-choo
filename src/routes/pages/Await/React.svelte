@@ -1,9 +1,11 @@
 <script>
-    import CodeHighlight from "$lib/CodeHighlight.svelte";
+	import CodeHighlight from '$lib/CodeHighlight.svelte';
 </script>
 
-<h3>Asynchronicité - React Way</h3>
-<CodeHighlight code={`// useFetchConfigurations.ts
+<div class="pad">
+	<h3>Asynchronicité - React Way</h3>
+	<CodeHighlight
+		code={`// useFetchConfigurations.ts
 // import ...
 
 export const useFetchConfigurations = (): {
@@ -34,8 +36,10 @@ export const useFetchConfigurations = (): {
     }, [configurationsNeedRefresh]);
 
     return {isLoading, configurations, refresh: () => setConfigurationsNeedRefresh(true)};
-};`} />
-<CodeHighlight code={`// ConfigurationStep.ts
+};`}
+	/>
+	<CodeHighlight
+		code={`// ConfigurationStep.ts
 // import ...
 
 export const ConfigurationStep = ... {
@@ -70,4 +74,6 @@ export const ConfigurationStep = ... {
             </Section>
         );
 }
-`} />
+`}
+	/>
+</div>

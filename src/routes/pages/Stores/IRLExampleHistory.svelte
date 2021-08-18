@@ -74,5 +74,4 @@ export function createHistory() {
 }`)];
 </script>
 
-<h3>Stores - Exemple d'historique de la Vraie vie vraie</h3>
-<EmbedRepl {components} />
+<EmbedRepl title="Stores - Exemple d'historique de la Vraie vie vraie" project="Cooktree" {components} />

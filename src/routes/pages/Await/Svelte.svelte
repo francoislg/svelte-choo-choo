@@ -1,10 +1,12 @@
 <script>
-    import CodeHighlight from "$lib/CodeHighlight.svelte";
-import { wrapScript } from "$lib/replUtils";
+	import CodeHighlight from '$lib/CodeHighlight.svelte';
+	import { wrapScript } from '$lib/replUtils';
 </script>
 
-<h3>Asynchronicité - Svelte Way</h3>
-<CodeHighlight code={`${wrapScript(`
+<div class="pad">
+	<h3>Asynchronicité - Svelte Way</h3>
+	<CodeHighlight
+		code={`${wrapScript(`
 let requete = ramasseDesDonnees();
 function refresh() {
   requete = ramasseDesDonnees();
@@ -17,4 +19,6 @@ function refresh() {
 {:catch error}
   OH NON! {error.message}
 {/await}
-`} />
+`}
+	/>
+</div>

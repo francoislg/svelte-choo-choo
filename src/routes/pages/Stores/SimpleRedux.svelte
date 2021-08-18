@@ -1,9 +1,11 @@
 <script>
-    import CodeHighlight from "$lib/CodeHighlight.svelte";
+	import CodeHighlight from '$lib/CodeHighlight.svelte';
 </script>
 
-<h3>Stores - Redux Way</h3>
-<CodeHighlight code={`// reducer.js
+<div class="pad">
+	<h3>Stores - Redux Way</h3>
+	<CodeHighlight
+		code={`// reducer.js
 export default (state = 0, action) => {
   switch (action.type) {
     case 'INCREMENT':
@@ -14,8 +16,10 @@ export default (state = 0, action) => {
       return state
   }
 }
-`} />
-<CodeHighlight code={`// Counter.js
+`}
+	/>
+	<CodeHighlight
+		code={`// Counter.js
 // import ...
 
 class Counter extends Component {
@@ -48,8 +52,10 @@ Counter.propTypes = {
 }
 
 export default Counter
-`} />
-<CodeHighlight code={`// index.js
+`}
+	/>
+	<CodeHighlight
+		code={`// index.js
 // import ...
 
 const store = createStore(counter)
@@ -66,4 +72,6 @@ const render = () => ReactDOM.render(
 
 render()
 store.subscribe(render)
-`} />
+`}
+	/>
+</div>

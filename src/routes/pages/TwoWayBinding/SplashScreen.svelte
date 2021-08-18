@@ -1,5 +1,8 @@
 <script>
-    import SplashScreen from "$lib/SplashScreen.svelte";
+	import Sign from '$lib/icons/Sign.svelte';
+	import SplashScreen from '$lib/SplashScreen.svelte';
 </script>
 
-<SplashScreen text="Two-Way Binding" />
+<SplashScreen text="Two-Way Binding">
+	<Sign slot="icon" />
+</SplashScreen>

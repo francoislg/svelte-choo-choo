@@ -2,27 +2,67 @@
 	import { animationDelay } from '$lib/page';
 	import { fly } from 'svelte/transition';
 	import Card from '$lib/style/Card.svelte';
-    import Grid from "$lib/layouts/SimpleGrid.svelte";
-import CoveoShape from '$lib/style/CoveoShape.svelte';
+	import Grid from '$lib/layouts/SimpleGrid.svelte';
+	import CoveoShape from '$lib/style/CoveoShape.svelte';
+	import Sign from '$lib/icons/Sign.svelte';
+	import SvelteIcon from '$lib/icons/svelte-icon.svelte';
+	import Boxdown from '$lib/icons/boxdown.svelte';
+	import Clock from '$lib/icons/clock.svelte';
+	import Partner from '$lib/icons/partner.svelte';
+	import Explorer from '$lib/icons/explorer.svelte';
+	import Lightning from '$lib/icons/lightning.svelte';
+	import Purse from '$lib/icons/purse.svelte';
 </script>
 
-<CoveoShape width={800} color='blue' position='bottom' />
+<CoveoShape width={800} color="blue" position="bottom" />
 
-<h3>Sujets pour aujourd'hui</h3>
-<div class="subjects">
+<div class="pad">
+	<h3>Sujets pour aujourd'hui</h3>
+	<div class="subjects">
+		<Grid>
+			<div in:fly={{ delay: $animationDelay * 1 }}>
+				<Card
+					>Introduction à Svelte
+					<div slot="icon"><SvelteIcon /></div></Card
+				>
+			</div>
+			<div in:fly={{ delay: $animationDelay * 2 }}>
+				<Card>Two-Way Binding <Sign slot="icon" /></Card>
+			</div>
+			<div in:fly={{ delay: $animationDelay * 3 }}><Card>Stores <Boxdown slot="icon" /></Card></div>
+			<div in:fly={{ delay: $animationDelay * 4 }}><Card>#await <Clock slot="icon" /></Card></div>
+			<div in:fly={{ delay: $animationDelay * 5 }}>
+				<Card>Animations <Partner slot="icon" /></Card>
+			</div>
+			<div in:fly={{ delay: $animationDelay * 6 }}>
+				<Card>Slots VS Children <Explorer slot="icon" /></Card>
+			</div>
+			<div in:fly={{ delay: $animationDelay * 7 }}>
+				<Card>Quality of Life Potpourri <Lightning slot="icon" /></Card>
+			</div>
+			<div in:fly={{ delay: $animationDelay * 8 }}>
+				<Card>Svelte Kit <Purse slot="icon" /></Card>
+			</div>
+		</Grid>
+	</div>
+	<h3 in:fly={{ delay: $animationDelay * 9 }}>Projets utilisés</h3>
 	<Grid>
-		<div in:fly={{ delay: $animationDelay * 1 }}><Card>Introduction à Svelte</Card></div>
-		<div in:fly={{ delay: $animationDelay * 2 }}><Card>Two-Way Binding</Card></div>
-		<div in:fly={{ delay: $animationDelay * 3 }}><Card>Stores</Card></div>
-		<div in:fly={{ delay: $animationDelay * 4 }}><Card>#await</Card></div>
-		<div in:fly={{ delay: $animationDelay * 5 }}><Card>transitions</Card></div>
-		<div in:fly={{ delay: $animationDelay * 6 }}><Card>Slots VS Children</Card></div>
-		<div in:fly={{ delay: $animationDelay * 7 }}><Card>Quality of Life Potpourri</Card></div>
-		<div in:fly={{ delay: $animationDelay * 8 }}><Card>Svelte Kit</Card></div>
+		<div in:fly={{ delay: $animationDelay * 10 }}>
+			<Card
+				><div>Coveo Innovate</div>
+				<img slot="icon" width="32" src="/innovate.png" alt="innovate" /></Card
+			>
+		</div>
+		<div in:fly={{ delay: $animationDelay * 11 }}>
+			<Card
+				><div>Coveo Blitz</div>
+				<img slot="icon" width="32" src="/blitz.png" alt="blitz" /></Card
+			>
+		</div>
+		<div in:fly={{ delay: $animationDelay * 12 }}><Card>Cooktree</Card></div>
+		<div in:fly={{ delay: $animationDelay * 13 }}><Card>?? Surprise ??</Card></div>
 	</Grid>
 </div>
-
-
 
 <style>
 	.subjects {

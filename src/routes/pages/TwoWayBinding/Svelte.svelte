@@ -12,5 +12,4 @@ let name = 'Heu, Mr Spock?';`,
 	);
 </script>
 
-<h3>Two-Way Binding - Svelte Way</h3>
-<EmbedRepl {components} />
+<EmbedRepl title="Two-Way Binding - Svelte Way" {components} />

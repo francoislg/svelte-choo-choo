@@ -1,9 +1,11 @@
 <script>
-    import CodeHighlight from "$lib/CodeHighlight.svelte";
+	import CodeHighlight from '$lib/CodeHighlight.svelte';
 </script>
 
-<h3>Stores - React/Redux Way Part 2</h3>
-<CodeHighlight code={`// CatalogsTable.ts
+<div class="pad">
+	<h3>Stores - React/Redux Way Part 2</h3>
+	<CodeHighlight
+		code={`// CatalogsTable.ts
 const makeMapStateToProps = () => {
     const isLoadingSelector = RequestsSelectors.createLoadingSelector([
         CatalogsActionsTypes.fetch,
@@ -59,4 +61,6 @@ return (
         // ...
     />
 );
-`} />
+`}
+	/>
+</div>

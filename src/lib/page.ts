@@ -5,6 +5,7 @@ const QuickStart = [
     "SvelteQuickStart/SplashScreen",
     "SvelteQuickStart/StolenBoxes",
     "SvelteQuickStart/KeyConcepts",
+    "SvelteQuickStart/KeyConcepts2",
 ];
 
 const TwoWayBinding = [
@@ -50,6 +51,7 @@ const QOL = [
     "QOL/SplashScreen",
     "QOL/Class",
     "QOL/Context",
+    "QOL/Actions",
     // "QOL/SVG",
 ];
 
@@ -74,6 +76,7 @@ const PAGES = [
     // "MissingStuff",
     "NextSteps",
     "Thanks",
+    "CoveoSplash"
 ];
 
 export const NUMBER_OF_PAGES = PAGES.length - 1;
@@ -102,4 +105,4 @@ function createPage() {
     }
 }
 
-export const animationDelay = writable(500);
+export const animationDelay = writable(700);

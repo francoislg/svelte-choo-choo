@@ -1,9 +1,11 @@
 <script>
-    import CodeHighlight from "$lib/CodeHighlight.svelte";
+	import CodeHighlight from '$lib/CodeHighlight.svelte';
 </script>
 
-<h3>Children - React Way</h3>
-<CodeHighlight code={`// TabPane.tsx
+<div class="pad">
+	<h3>Children - React Way</h3>
+	<CodeHighlight
+		code={`// TabPane.tsx
 // import ...
 
 export const TabPane: React.FunctionComponent<ITabPaneProps> = ({id, className, isActive, children}) => (
@@ -17,9 +19,13 @@ export const TabPane: React.FunctionComponent<ITabPaneProps> = ({id, className, 
     >
         {children}
     </div>
-);`} />
-<CodeHighlight code={`// TabExamples.tsx
+);`}
+	/>
+	<CodeHighlight
+		code={`// TabExamples.tsx
 <TabPane>
     <div>Contenu du tab</div>
 </TabPane>
-`} />
+`}
+	/>
+</div>

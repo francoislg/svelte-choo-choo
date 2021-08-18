@@ -7,6 +7,11 @@
 	import github from 'svelte-highlight/src/styles/github-dark';
 	import FixedFooter from '../lib/FixedFooter.svelte';
 	import Jump from '../lib/Jump.svelte';
+import { getLayoutContext, setLayoutContext } from '../lib/LayoutContext';
+import CoveoLogo from '../lib/CoveoLogo.svelte';
+
+	setLayoutContext();
+	const layoutContext = getLayoutContext();
 
 	let showFooter: boolean = false;
 
@@ -19,7 +24,7 @@
 				page.previous();
 			}
 			if (event.code === 'KeyJ') {
-				showFooter = !showFooter;
+				 showFooter = !showFooter;
 			}
 		}
 	}
@@ -50,6 +55,10 @@
 	</FixedFooter>
 {/if}
 
+{#if $layoutContext.showLogo}
+	<CoveoLogo />
+{/if}
+
 <style>
 	:global(:root) {
 		font-family: "canada-type-gibson", "Mier B", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -68,10 +77,6 @@
 		padding: 0;
 	}
 
-	:global(body) {
-		padding: 10px;
-	}
-
 	:global(h1, h2, h3) {
 		/* Little hack to prevent the page from scrolling 🙈 */
 		margin: 0px;
@@ -88,5 +93,10 @@
 	:global(::-webkit-scrollbar) {
 		width: 0;
 		background: transparent;
+	}
+
+	/* Utility class to not have to mess much with global padding when required */
+	:global(.pad) {
+		padding: 10px;
 	}
 </style>

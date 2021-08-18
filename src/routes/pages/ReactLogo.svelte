@@ -1,5 +1,7 @@
 <script>
-    import ReactIcon from "$lib/icons/reactjs-icon.svelte";
+	import ReactIcon from '$lib/icons/reactjs-icon.svelte';
 </script>
 
-<ReactIcon />
+<div class="pad">
+	<ReactIcon />
+</div>

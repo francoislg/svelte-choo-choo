@@ -20,6 +20,9 @@ function doSomething() {}`,
         C'est tout, rien d'autre!
     </CardStyle>
 
+    <label>Show Slotted Card 
+    <input type="checkbox" bind:checked={showSlots} /></label>
+
     {#if showSlots}
       <Card>
           <div slot="contentbefore" style="position: absolute; bottom: 5px; right: 5px">Pour float, admettons.</div>
@@ -28,6 +31,8 @@ function doSomething() {}`,
           <div slot="footer">Un footer!</div>
       </Card>
     {/if}
+
+    <label>Show Complex Card <input type="checkbox" bind:checked={showComplex} /></label>
 
     {#if showComplex}
       <CardRecipe
@@ -368,5 +373,4 @@ export let numberOfCookbooks = undefined;`,
 	];
 </script>
 
-<h3>Slots - "Card" dans la vraie vie vraie</h3>
-<EmbedRepl {components} />
+<EmbedRepl title='Slots - "Card" dans la Vraie vie vraie' project="Cooktree" {components} />

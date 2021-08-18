@@ -32,5 +32,4 @@
 	];
 </script>
 
-<h3>Two-Way Binding - Component Input</h3>
-<EmbedRepl {components} />
+<EmbedRepl title="Two-Way Binding - Component Input" {components} />

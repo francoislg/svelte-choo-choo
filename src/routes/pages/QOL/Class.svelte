@@ -20,5 +20,4 @@
 	);
 </script>
 
-<h3>QOL - Class shortcuts</h3>
-<EmbedRepl {components} />
+<EmbedRepl title="QOL - Class shortcuts" {components} />

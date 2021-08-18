@@ -7,11 +7,11 @@
 
     // Not super clean, but hey, works OK!
 	function wave(node, { duration }) {
-        const startX = Math.floor(Math.random() * 150);
+        const startX = Math.floor(Math.random() * 250);
         const startY = Math.floor(Math.random() * 50) + 10;
-        const speedX = 50 + ((Math.random() - 0.5) * 50);
+        const speedX = 50 + ((Math.random() - 0.5) * 100);
         const easeFlip = Math.random() > 0.5;
-        const speedY = 70 + ((Math.random() - 0.5) * 15);
+        const speedY = 70 + ((Math.random() - 0.5) * 30);
 		return {
 			duration,
 			css: (t) => {
@@ -34,6 +34,14 @@
 			}
 		};
 	}
+
+	setTimeout(() => {
+		hearts = [...hearts, { id: index++, duration: 8000 }];
+	}, 500);
+
+	setTimeout(() => {
+		hearts = [...hearts, { id: index++, duration: 8000 }];
+	}, 1000);
 
     setInterval(() => {
 		hearts = [...hearts, { id: index++, duration: 8000 }];
@@ -68,7 +76,7 @@
 	.container {
 		position: relative;
         height: 200px;
-        width: 200px;
+        width: 300px;
 	}
 
     .heart {

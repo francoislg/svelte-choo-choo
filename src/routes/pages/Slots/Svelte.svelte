@@ -1,9 +1,11 @@
 <script>
-    import CodeHighlight from "$lib/CodeHighlight.svelte";
+	import CodeHighlight from '$lib/CodeHighlight.svelte';
 </script>
 
-<h3>Children - Svelte Way</h3>
-<CodeHighlight code={`// TabPane.svelte
+<div class="pad">
+	<h3>Children - Svelte Way</h3>
+	<CodeHighlight
+		code={`// TabPane.svelte
 // import ...
 
 <div
@@ -15,9 +17,13 @@
 >
     <slot />
 </div>
-);`} />
-<CodeHighlight code={`// TabExamples.Svelte
+);`}
+	/>
+	<CodeHighlight
+		code={`// TabExamples.Svelte
 <TabPane>
     <div>Contenu du tab</div>
 </TabPane>
-`} />
+`}
+	/>
+</div>

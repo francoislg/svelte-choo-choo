@@ -140,5 +140,4 @@
 	];
 </script>
 
-<h3>Two-Way Binding - Example de la vraie vie vraie (Coveo Innovate)</h3>
-<EmbedRepl {components} />
+<EmbedRepl title="Two-Way Binding - Example de la vraie vie vraie" project="Coveo Innovate" {components} />

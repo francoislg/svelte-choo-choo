@@ -2,14 +2,20 @@
 	import EmbedRepl from '$lib/EmbedRepl.svelte';
 	import { oneSvelteComp, oneTypeScriptComp } from '$lib/replUtils';
 
-	const components = [oneSvelteComp("App", `
+	const components = [
+		oneSvelteComp(
+			'App',
+			`
 	import Messages from "./Messages.svelte";
 	import MessagePush from "./MessagePush.svelte";`,
-`
+			`
 <Messages />
 <MessagePush />
 `
-	), oneTypeScriptComp("MessagesStore", `import { writable } from 'svelte/store';
+		),
+		oneTypeScriptComp(
+			'MessagesStore',
+			`import { writable } from 'svelte/store';
 
 function expiringMessages() {
 	const { subscribe, update } = writable([]);
@@ -32,16 +38,21 @@ function expiringMessages() {
 }
 
 export const messages = expiringMessages();
-`), oneSvelteComp("Messages",`
+`
+		),
+		oneSvelteComp(
+			'Messages',
+			`
 	import { fly } from 'svelte/transition';
 	import { flip } from 'svelte/animate';
 	import { messages } from './MessagesStore';`,
-`<div class="container">
+			`<div class="container">
 	{#each $messages as { message, type, date } (date)}
 		<div animate:flip transition:fly class={'message ' + type}>{message}</div>
 	{/each}
 </div>
-`, `
+`,
+			`
 	.container {
 		top: 50px;
 		position: fixed;
@@ -63,16 +74,22 @@ export const messages = expiringMessages();
 	.error {
 		background-color: red;
 	}
-`), oneSvelteComp("MessagePush", `
+`
+		),
+		oneSvelteComp(
+			'MessagePush',
+			`
 import { messages } from "./MessagesStore";
-let index = 0;`, `
+let index = 0;`,
+			`
 <button on:click={() => messages.push('Message #' + index++, 'error')}>
  Error
 </button>
 <button on:click={() => messages.push('Message #' + index++, 'warning')}>
  Warning
-</button>`)];
+</button>`
+		)
+	];
 </script>
 
-<h3>Stores - Exemple message pop-up de la Vraie vie vraie</h3>
-<EmbedRepl {components} />
+<EmbedRepl title="Stores - Exemple message pop-up de la Vraie vie vraie" project="Coveo Innovate" {components} />

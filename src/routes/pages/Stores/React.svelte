@@ -1,9 +1,11 @@
 <script>
-    import CodeHighlight from "$lib/CodeHighlight.svelte";
+	import CodeHighlight from '$lib/CodeHighlight.svelte';
 </script>
 
-<h3>Stores - React/Redux Way</h3>
-<CodeHighlight code={`// CatalogsReducers.ts
+<div class="pad">
+	<h3>Stores - React/Redux Way</h3>
+	<CodeHighlight
+		code={`// CatalogsReducers.ts
 const initialState: ICatalogsState = {
     data: [],
 };
@@ -21,8 +23,10 @@ export const catalogsReducer = (
     state: ICatalogsState = initialState,
     action: IReduxAction<any> = {type: '', payload: {}}
 ) => (!_.isUndefined(CatalogsReducers[action.type]) ? CatalogsReducers[action.type](state, action) : state);
-`} />
-<CodeHighlight code={`// CatalogsActions.ts
+`}
+	/>
+	<CodeHighlight
+		code={`// CatalogsActions.ts
 export const CatalogsActionsTypes = {
     updateCatalogs: 'UPDATE_CATALOGS',
     fetch: 'FETCH_CATALOGS',
@@ -72,4 +76,6 @@ export const CatalogsActions = {
     deleteCatalog,
     createCatalog,
 };
-`} />
+`}
+	/>
+</div>

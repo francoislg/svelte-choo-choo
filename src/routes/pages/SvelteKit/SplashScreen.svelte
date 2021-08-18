@@ -1,20 +1,21 @@
 <script context="module">
-    export async function load() {
-        const allerChercherDuData = () => Promise.resolve("Allo!");
-        return {
-            props: {
-                serverSide: await allerChercherDuData()
-            }
-        }
-    }
+	export async function load() {
+		const allerChercherDuData = () => Promise.resolve('Svelte Kit');
+		return {
+			props: {
+				serverSide: await allerChercherDuData()
+			}
+		};
+	}
 </script>
 
 <script>
-    import SplashScreen from "$lib/SplashScreen.svelte";
+	import Purse from '$lib/icons/purse.svelte';
+	import SplashScreen from '$lib/SplashScreen.svelte';
 
-    export let serverSide;
+	export let serverSide;
 </script>
 
-<SplashScreen text="Svelte Kit" />
-
-{serverSide}
+<SplashScreen text={serverSide}>
+	<Purse slot="icon" />
+</SplashScreen>

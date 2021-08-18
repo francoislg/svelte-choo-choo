@@ -1,5 +1,7 @@
 <script>
-    import SvelteIcon from "$lib/icons/svelte-icon.svelte";
+	import SvelteIcon from '$lib/icons/svelte-icon.svelte';
 </script>
 
-<SvelteIcon />
+<div class="pad">
+	<SvelteIcon />
+</div>

@@ -38,5 +38,4 @@ export let color = 'red';`,
 	];
 </script>
 
-<h3>QOL - SVGs</h3>
-<EmbedRepl {components} />
+<EmbedRepl title="QOL - SVGs" {components} />

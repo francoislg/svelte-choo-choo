@@ -23,46 +23,46 @@
 		radius = 48;
 	}
 
-    const defaults = {
-        flyX: 0,
-        flyY: 0,
-        top: undefined,
-        left: undefined,
-        bottom: undefined,
-        right: undefined,
-    };
+	const defaults = {
+		flyX: 0,
+		flyY: 0,
+		top: undefined,
+		left: undefined,
+		bottom: undefined,
+		right: undefined
+	};
 
-	const positionParams: { [name: string]: Partial<typeof defaults>} = {
+	const positionParams: { [name: string]: Partial<typeof defaults> } = {
 		bottom: {
 			flyY: 200,
-            bottom: -width / 2.5,
-            right: -width / 10
+			bottom: -width / 2.5,
+			right: -width / 10
 		},
 		top: {
 			flyY: -200,
-            left: -width / 10,
-            top: -width / 2
+			left: -width / 10,
+			top: -width / 2
 		},
 		left: {
 			flyX: -200,
-            left: -width / 2.5,
-            top: 0
+			left: -width / 2.5,
+			top: 0
 		},
 		right: {
 			flyX: 200,
-            right: -width / 2.5
+			right: -width / 2.5
 		}
 	};
 
-    const params = {
-        ...defaults,
-        ...positionParams[position],
-    };
+	const params = {
+		...defaults,
+		...positionParams[position]
+	};
 </script>
 
 <div
 	class="background"
-    style="top: {params.top}px; bottom: {params.bottom}px; left: {params.left}px; right: {params.right}px"
+	style="top: {params.top}px; bottom: {params.bottom}px; left: {params.left}px; right: {params.right}px"
 	in:fly={{
 		delay: $animationDelay * 2,
 		x: params.flyX,
@@ -72,18 +72,27 @@
 	<div
 		class="shape {color}"
 		style="width: {realWidth}px; height: {realWidth}px; border-radius: {radius}px;"
-	/>
+	>
+		<div class="content">
+			<slot />
+		</div>
+	</div>
 </div>
 
 <style>
-    .background {
-        position: fixed;
-        z-index: -1;
-    }
+	.background {
+		position: fixed;
+		z-index: -1;
+	}
 
-    .shape {
-        transform: rotateZ(45deg);
-    }
+	.shape {
+		transform: rotateZ(45deg);
+	}
+
+	.content {
+		/* :shrug: it works */
+		transform: rotateZ(-45deg);
+	}
 
 	.red {
 		background-color: var(--pomegranate);
