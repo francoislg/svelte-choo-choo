@@ -1,5 +1,6 @@
 <script>
 	import CodeHighlight from '$lib/CodeHighlight.svelte';
+import CoveoShape from '$lib/style/CoveoShape.svelte';
 </script>
 
 <div class="pad">
@@ -29,3 +30,5 @@ export const TabPane: React.FunctionComponent<ITabPaneProps> = ({id, className, 
 `}
 	/>
 </div>
+
+<CoveoShape color="blue" position="bottom" randomize />

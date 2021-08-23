@@ -1,5 +1,6 @@
 <script>
 	import CodeHighlight from '$lib/CodeHighlight.svelte';
+	import CoveoShape from '$lib/style/CoveoShape.svelte';
 </script>
 
 <div class="pad">
@@ -79,3 +80,5 @@ export const CatalogsActions = {
 `}
 	/>
 </div>
+
+<CoveoShape color="red" position="top" randomize />

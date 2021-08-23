@@ -2,10 +2,11 @@
 	import { fly } from 'svelte/transition';
 	import { animationDelay } from '../page';
 
-	export let width: number;
+	export let width: number = 800;
 	export let color: 'yellow' | 'blue' | 'red' | 'green';
 	export let position: 'bottom' | 'top' | 'left' | 'right';
 	export let delay: number = $animationDelay * 2;
+	export let randomize: boolean = false;
 
 	let realWidth = width / Math.sqrt(2);
 
@@ -33,25 +34,34 @@
 		right: undefined
 	};
 
+	function randomizedX() {
+		return randomize ? Math.random() * 100 : 0;
+	}
+
+	function randomizedY() {
+		return randomize ? Math.random() * 100 : 0;
+	}
+
 	const positionParams: { [name: string]: Partial<typeof defaults> } = {
 		bottom: {
 			flyY: 200,
-			bottom: -width / 2.5,
-			right: -width / 10
+			bottom: `${-width / 2.5}px`,
+			right: `calc(${randomizedX()}%`,
 		},
 		top: {
 			flyY: -200,
-			left: -width / 10,
-			top: -width / 2
+			left: `calc(${randomizedX()}%`,
+			top:  `${-width / 2}px`,
 		},
 		left: {
 			flyX: -200,
-			left: -width / 2.5,
-			top: 0
+			left: `${-width / 2.5}px`,
+			top: randomizedY() + "%"
 		},
 		right: {
 			flyX: 200,
-			right: -width / 2.5
+			right: `${-width / 2.5}px`,
+			top: randomizedY() + "%",
 		}
 	};
 
@@ -63,7 +73,7 @@
 
 <div
 	class="background"
-	style="top: {params.top}px; bottom: {params.bottom}px; left: {params.left}px; right: {params.right}px"
+	style="top: {params.top}; bottom: {params.bottom}; left: {params.left}; right: {params.right}"
 	in:fly={{
 		delay,
 		x: params.flyX,

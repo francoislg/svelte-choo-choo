@@ -51,7 +51,6 @@ const SvelteKit = ['SvelteKit/SplashScreen', 'SvelteKit/Kit'];
 
 const PAGES = [
 	'First',
-	'ReactLogo',
 	'SvelteLogo',
 	'Moi',
 	'Subjects',
@@ -64,6 +63,7 @@ const PAGES = [
 	...QOL,
 	...SvelteKit,
 	// "MissingStuff",
+	"Reflexion",
 	'NextSteps',
 	'Thanks',
 	'CoveoSplash'

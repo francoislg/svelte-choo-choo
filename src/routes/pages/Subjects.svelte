@@ -23,7 +23,7 @@ import Partner from '$lib/icons/partner.svelte';
 			<div in:fly={{ delay: $animationDelay / 2 }}>
 				<Card
 					>Introduction à Svelte
-					<div slot="icon"><SvelteIcon /></div></Card
+					<div slot="icon"><SvelteIcon delay={$animationDelay} /></div></Card
 				>
 			</div>
 			<div in:fly={{ delay: $animationDelay }}>

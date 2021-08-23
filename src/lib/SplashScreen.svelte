@@ -3,8 +3,9 @@
 
 	import { getLayoutContext } from './LayoutContext';
 
-	export let text;
+	export let text = '';
 	export let isLogo = false;
+	export let altColor = false;
 
 	const layout = getLayoutContext();
 
@@ -17,9 +18,11 @@
 	});
 </script>
 
-<div class="splash" class:isLogo>
+<div class="splash" class:isLogo class:altColor>
 	<h1>
-		{text}
+		<slot name="text">
+			{text}
+		</slot>
 	</h1>
 	<slot />
 	{#if $$slots.icon}
@@ -46,6 +49,10 @@
 
 	.isLogo {
 		background-color: white;
+	}
+
+	.altColor {
+		background-color: var(--splash-alt-color);
 	}
 
 	.icon {

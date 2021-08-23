@@ -1,6 +1,7 @@
 <script>
 	import CodeHighlight from '$lib/CodeHighlight.svelte';
 	import { wrapScript, wrapStyle } from '$lib/replUtils';
+import CoveoShape from '$lib/style/CoveoShape.svelte';
 </script>
 
 <div class="pad">
@@ -20,3 +21,5 @@ let thisisprivate = 'y';
 `}
 	/>
 </div>
+
+<CoveoShape color="red" position="right" randomize />

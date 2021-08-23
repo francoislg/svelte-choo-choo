@@ -1,6 +1,6 @@
 <script>
 	import SplashScreen from '$lib/SplashScreen.svelte';
-	import SvelteLogo from '../SvelteLogo.svelte';
+	import SvelteLogo from '$lib/icons/svelte-icon.svelte';
 </script>
 
 <SplashScreen text="Svelte, rapidement">

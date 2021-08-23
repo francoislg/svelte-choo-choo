@@ -1,34 +1,36 @@
 <script lang="ts">
-	import { elasticInOut, backInOut, quadInOut } from 'svelte/easing';
+	import { quadInOut } from 'svelte/easing';
 
+	export let delay = 0;
 	let index = 0;
-	let hearts = [{ id: index++, duration: 5000 }];
-	let container: HTMLElement;
+	let hearts = [createHeart()];
+
+	function createHeart() {
+		const startX = Math.random() * 100;
+		return { id: index++, left: startX + "%", bottom: "0px", duration: 5000 };
+	}
 
 	// Not super clean, but hey, works OK!
-	function wave(node, { duration }) {
-		const startX = Math.floor(Math.random() * 250);
-		const startY = Math.floor(Math.random() * 50) + 10;
+	function wave(node: HTMLElement, { duration }) {
 		const speedX = 50 + (Math.random() - 0.5) * 100;
 		const easeFlip = Math.random() > 0.5;
-		const speedY = 70 + (Math.random() - 0.5) * 30;
+		const speedY = 120 + (Math.random() - 0.5) * 30;
 		return {
 			duration,
+			easing: quadInOut,
 			css: (t) => {
-				const animX = elasticInOut(t);
-				const animY = backInOut(t);
 				let expo = 1;
 				if (t < 0.1) {
-					expo = quadInOut(t * 10);
+					expo = t * 10;
 				}
 				if (t > 0.9) {
-					expo = 1 - quadInOut((t - 0.9) * 10);
+					expo = 1 - (t - 0.9) * 10;
 				}
 
 				return `
 					transform: translate(
-                        calc(${startX}px ${easeFlip ? '+' : '-'} ${Math.floor(animX * speedX)}px),
-                        calc(-${startY}px - ${Math.floor(animY * speedY)}px)
+						${easeFlip ? '' : '-'}${Math.floor(t * speedX)}px,
+						-${Math.floor(t * speedY)}px
                     );
                     opacity: ${expo.toFixed(1)};`;
 			}
@@ -36,30 +38,33 @@
 	}
 
 	setTimeout(() => {
-		hearts = [...hearts, { id: index++, duration: 8000 }];
-	}, 500);
+		setInterval(() => {
+			hearts = [...hearts, createHeart()];
+		}, Math.random() * 4000 + 500);
+
+		setInterval(() => {
+			hearts = [...hearts, createHeart()];
+		}, Math.random() * 2000 + 1000);
+	}, delay);
 
 	setTimeout(() => {
-		hearts = [...hearts, { id: index++, duration: 8000 }];
-	}, 1000);
+		hearts = [...hearts, createHeart()];
+	}, delay + 500);
 
-	setInterval(() => {
-		hearts = [...hearts, { id: index++, duration: 8000 }];
-	}, Math.random() * 4000 + 500);
-
-	setInterval(() => {
-		hearts = [...hearts, { id: index++, duration: 8000 }];
-	}, Math.random() * 2000 + 1000);
+	setTimeout(() => {
+		hearts = [...hearts, createHeart()];
+	}, delay + 1000);
 </script>
 
-<div class="container" bind:this={container}>
-	{#each hearts as { id, duration } (id)}
+<div class="container">
+	{#each hearts as { id, duration, bottom, left } (id)}
 		<img
 			src="/heart.png"
 			alt="heart"
 			class="heart"
 			width="32"
 			height="32"
+			style="left: {left}; bottom: {bottom};"
 			in:wave={{ duration }}
 			on:introend={() => (hearts = hearts.filter((h) => h.id !== id))}
 		/>
@@ -71,14 +76,13 @@
 	.container {
 		position: relative;
 		height: 200px;
-		width: 300px;
+		width: 100%;
 	}
 
 	.heart {
 		position: absolute;
 		opacity: 0;
 		bottom: 0px;
-		left: 0px;
-		transform: translate(calc(100%));
+		transform: translate(100%);
 	}
 </style>
