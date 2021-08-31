@@ -1,11 +1,11 @@
 <script>
 	import CodeHighlight from '$lib/CodeHighlight.svelte';
-import Arrowright from '$lib/icons/arrowright.svelte';
-import { animationDelay } from '$lib/page';
-import PresentationLink from '$lib/PresentationLink.svelte';
+	import Arrowright from '$lib/icons/arrowright.svelte';
+	import { animationDelay } from '$lib/page';
+	import PresentationLink from '$lib/PresentationLink.svelte';
 	import SplashScreen from '$lib/SplashScreen.svelte';
 	import CoveoShape from '$lib/style/CoveoShape.svelte';
-import { fly } from 'svelte/transition';
+	import { fly } from 'svelte/transition';
 	const liens = [
 		{
 			text: 'svelte.dev',
@@ -33,7 +33,7 @@ import { fly } from 'svelte/transition';
 <div class="pad">
 	<SplashScreen text="Merci!">
 		<PresentationLink />
-		<CoveoShape width={600} color="red" position="bottom" delay={$animationDelay * 10}>
+		<CoveoShape width={1000} color="red" position="bottom" delay={$animationDelay * 10}>
 			<h4>Liens intéressants</h4>
 			<ul>
 				{#each liens as { text, link }}
@@ -53,6 +53,13 @@ import { fly } from 'svelte/transition';
 <style>
 	h4 {
 		color: white;
+		margin-bottom: 0px;
+	}
+
+	h4,
+	li {
+		font-size: 2em;
+		color: white;
 	}
 
 	a {
@@ -63,7 +70,7 @@ import { fly } from 'svelte/transition';
 		display: flex;
 		position: fixed;
 		bottom: 0;
-		right: 420px;
+		right: 800px;
 		align-items: center;
 	}
 

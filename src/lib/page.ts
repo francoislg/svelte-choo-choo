@@ -1,4 +1,4 @@
-import { writable } from 'svelte/store';
+import { derived, writable } from 'svelte/store';
 import { goto } from '$app/navigation';
 
 const QuickStart = [
@@ -98,3 +98,7 @@ function createPage() {
 }
 
 export const animationDelay = writable(700);
+
+export const delayed = () => derived([animationDelay], ([value]) => (index) => value + (value * index));
+
+export const delayedFaster = () => derived([animationDelay], ([value]) => (index) => value + (value / 2 * index));

@@ -1,5 +1,5 @@
 <script>
-	import { animationDelay } from '$lib/page';
+	import { delayedFaster } from '$lib/page';
 	import { fly } from 'svelte/transition';
 	import Card from '$lib/style/Card.svelte';
 	import Grid from '$lib/layouts/SimpleGrid.svelte';
@@ -11,7 +11,9 @@
 	import Explorer from '$lib/icons/explorer.svelte';
 	import Lightning from '$lib/icons/lightning.svelte';
 	import Purse from '$lib/icons/purse.svelte';
-import Partner from '$lib/icons/partner.svelte';
+	import Partner from '$lib/icons/partner.svelte';
+
+	const delay = delayedFaster();
 </script>
 
 <CoveoShape width={800} color="blue" position="bottom" />
@@ -20,27 +22,27 @@ import Partner from '$lib/icons/partner.svelte';
 	<h3>Sujets pour aujourd'hui</h3>
 	<div class="subjects">
 		<Grid>
-			<div in:fly={{ delay: $animationDelay / 2 }}>
+			<div in:fly={{ delay: $delay(1) }}>
 				<Card
 					>Introduction à Svelte
-					<div slot="icon"><SvelteIcon delay={$animationDelay} /></div></Card
+					<div slot="icon"><SvelteIcon delay={$delay(1)} /></div></Card
 				>
 			</div>
-			<div in:fly={{ delay: $animationDelay }}>
+			<div in:fly={{ delay: $delay(2) }}>
 				<Card>Two-Way Binding <Sign slot="icon" /></Card>
 			</div>
-			<div in:fly={{ delay: $animationDelay / 2 * 3 }}><Card>Stores <Boxdown slot="icon" /></Card></div>
-			<div in:fly={{ delay: $animationDelay / 2 * 4 }}><Card>#await <Clock slot="icon" /></Card></div>
-			<div in:fly={{ delay: $animationDelay / 2 * 5 }}>
+			<div in:fly={{ delay: $delay(3) }}><Card>Stores <Boxdown slot="icon" /></Card></div>
+			<div in:fly={{ delay: $delay(4) }}><Card>#await <Clock slot="icon" /></Card></div>
+			<div in:fly={{ delay: $delay(5) }}>
 				<Card>Slots VS Children <Explorer slot="icon" /></Card>
 			</div>
-			<div in:fly={{ delay: $animationDelay / 2 * 6 }}>
+			<div in:fly={{ delay: $delay(6) }}>
 				<Card>Quality of Life Potpourri <Lightning slot="icon" /></Card>
 			</div>
-			<div in:fly={{ delay: $animationDelay / 2 * 7 }}>
+			<div in:fly={{ delay: $delay(7) }}>
 				<Card>Svelte Kit <Purse slot="icon" /></Card>
 			</div>
-			<div in:fly={{ delay: $animationDelay / 2 * 8 }}>
+			<div in:fly={{ delay: $delay(8) }}>
 				<Card>Animations <Partner slot="icon" /></Card>
 			</div>
 		</Grid>

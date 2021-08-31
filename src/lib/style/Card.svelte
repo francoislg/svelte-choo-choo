@@ -12,7 +12,7 @@
 		background-color: var(--background);
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 		padding: 2px 16px;
-		height: 150px;
+		height: 250px;
 		border-radius: 5px;
 		text-align: center;
 
@@ -21,13 +21,14 @@
 		justify-content: center;
 		flex-direction: column;
 		fill: white;
+		font-size: 2em;
 	}
 
 	.icon {
 		width: 32px;
 		height: 32px;
 		fill: white;
-		margin-top: 5px;
+		margin-top: 15px;
 	}
 
 	.card.test {
