@@ -1,5 +1,5 @@
 <script>
-	import { animationDelay, delayed } from '$lib/page';
+	import { delayed } from '$lib/page';
 	import { drawThenFill } from '$lib/transitions/draw-then-fill';
 
 	const delay = delayed();

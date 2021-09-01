@@ -21,5 +21,6 @@
 	.link {
 		padding-top: 40px;
 		font-size: 2em;
+		text-align: center;
 	}
 </style>

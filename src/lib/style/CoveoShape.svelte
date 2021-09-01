@@ -119,6 +119,13 @@
 		}
 	}
 
+	@media (max-width: 600px)
+	{
+		.content {
+			margin-left: 200px;
+		}
+	}
+
 
 	.red {
 		background-color: var(--pomegranate);
