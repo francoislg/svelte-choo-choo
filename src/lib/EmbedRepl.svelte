@@ -65,5 +65,6 @@
 		height: 85%;
 		width: 100%;
 		border-bottom: 1px solid var(--bright-turquoise);
+		font-size: 1.25em;
 	}
 </style>

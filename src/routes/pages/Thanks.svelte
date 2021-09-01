@@ -44,7 +44,7 @@
 			</ul>
 		</CoveoShape>
 		<div class="code" in:fly={{ y: 200, delay: $animationDelay * 15 }}>
-			<CodeHighlight code={`<div ... in:fly={{y: 200, delay: 10000}} />`} />
+			<CodeHighlight code={`<div ... in:fly={{y: 200, delay: 10000}} />`} full />
 			<div class="arrow"><Arrowright /></div>
 		</div>
 	</SplashScreen>
