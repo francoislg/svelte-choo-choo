@@ -5,28 +5,13 @@
 	import { animationDelay } from '$lib/page';
 	import { fly } from 'svelte/transition';
 
-	let transitioned = true;
+	let transitioned = false;
 </script>
 
 <div class="pad logo">
-	{#if transitioned}
-		<div
-			in:fly={{ x: -1500, duration: $animationDelay * 2, delay: $animationDelay, opacity: 1 }}
-			out:fly={{ x: 1500, duration: $animationDelay }}
-			class="container"
-		>
-			<div class="svelte stack">
-				<SvelteIcon delay={$animationDelay * 2} />
-			</div>
-			<div class="train stack">
-				<Train />
-			</div>
-		</div>
-	{:else}
-		<div out:fly={{ x: 500 }} class="logo">
-			<ReactIcon />
-		</div>
-	{/if}
+	<div out:fly={{ x: 500 }} class="logo">
+		<ReactIcon />
+	</div>
 </div>
 
 <svelte:window on:click={() => (transitioned = true)} />
@@ -39,7 +24,7 @@
 	.container {
 		position: fixed;
 		/* good enough */
-		top: 20%;
+		top: 35%;
 		left: 35%;
 	}
 

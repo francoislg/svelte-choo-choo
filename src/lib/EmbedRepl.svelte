@@ -67,4 +67,18 @@
 		border-bottom: 1px solid var(--bright-turquoise);
 		font-size: 1.25em;
 	}
+
+	/* Adjustments to pad for overscan, just in case */
+	:global(.overscanMode .repl) {
+		width: 80%;
+		left: 10%;
+		top: 50px;
+	}
+
+	:global(.overscanMode .title) {
+		position: relative;
+		width: 80%;
+		left: 10%;
+		top: 50px;
+	}
 </style>

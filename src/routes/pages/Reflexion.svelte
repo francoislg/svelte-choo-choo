@@ -4,12 +4,12 @@
 
 <div class="pad">
 	<SplashScreen altColor>
-		<div slot="text">Write <span class="highlight">Less Code</span></div>
+		<div slot="text">Write <span class="text-highlight">Less Code</span></div>
 	</SplashScreen>
 </div>
 
 <style>
-	.highlight {
-		color: var(--turbo);
+	.text-highlight {
+		color: var(--bright-turquoise);
 	}
 </style>

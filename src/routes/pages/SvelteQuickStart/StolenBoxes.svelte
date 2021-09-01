@@ -1,3 +1,9 @@
+<script>
+	import { delayed } from '$lib/page';
+
+	const delay = delayed();
+</script>
+
 <!-- These boxes were ripped from svelte.dev just to show that it's just simple HTML and CSS -->
 <div class="pad">
 	<h3>Svelte, défini par Svelte</h3>
@@ -39,24 +45,6 @@
 				</p>
 				<span class="learn-more">learn more</span></a
 			>
-		</div>
-		<div class="what svelte-1377vhn" style="grid-area: what;">
-			<div class="description">
-				<p>
-					Svelte is a radical new approach to building user interfaces. Whereas traditional
-					frameworks like React and Vue do the bulk of their work in the <em>browser</em>, Svelte
-					shifts that work into a <em>compile step</em> that happens when you build your app.
-				</p>
-				<p>
-					Instead of using techniques like virtual DOM diffing, Svelte writes code that surgically
-					updates the DOM when the state of your app changes.
-				</p>
-				<p>
-					<a href="https://svelte.dev/blog/svelte-3-rethinking-reactivity"
-						>Read the introductory blog post</a
-					> to learn more.
-				</p>
-			</div>
 		</div>
 		<div class="how svelte-1377vhn" style="grid-area: how;">
 			<div style="grid-area: start; display: flex; flex-direction: column; min-width: 0">
@@ -127,5 +115,9 @@
 		display: flex;
 		flex-direction: column;
 		border-bottom: none;
+	}
+	
+	a {
+		text-decoration: none;
 	}
 </style>

@@ -4,6 +4,7 @@ import { goto } from '$app/navigation';
 const QuickStart = [
 	'SvelteQuickStart/SplashScreen',
 	'SvelteQuickStart/StolenBoxes',
+	'SvelteQuickStart/WriteLessBox',
 	'SvelteQuickStart/KeyConcepts',
 	'SvelteQuickStart/KeyConcepts2'
 ];
@@ -51,6 +52,7 @@ const SvelteKit = ['SvelteKit/SplashScreen', 'SvelteKit/Kit'];
 
 const PAGES = [
 	'First',
+	'ReactLogo',
 	'SvelteLogo',
 	'Moi',
 	'Subjects',

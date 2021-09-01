@@ -77,4 +77,16 @@
 	.arrow {
 		padding-left: 10px;
 	}
+
+	@media (min-width: 2048px)
+	{
+		.code {
+			right: 1300px;
+		}
+
+		h4, li {
+			font-size: 1.5em;
+		}
+
+	}
 </style>

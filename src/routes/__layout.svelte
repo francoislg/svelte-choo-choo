@@ -4,16 +4,18 @@
 	import { onMount } from 'svelte';
 	import { page as currentPage } from '$app/stores';
 	import { browser } from '$app/env';
-	import github from 'svelte-highlight/src/styles/github-dark';
+	import github from 'svelte-highlight/src/styles/github';
 	import FixedFooter from '../lib/FixedFooter.svelte';
 	import Jump from '../lib/Jump.svelte';
 	import { getLayoutContext, setLayoutContext } from '../lib/LayoutContext';
 	import CoveoLogo from '../lib/CoveoLogo.svelte';
+	import { swiper } from '../lib/swipe';
 
 	setLayoutContext();
 	const layoutContext = getLayoutContext();
 
 	let showFooter: boolean = false;
+	let overscanMode = false;
 
 	function handleKeydown(event: KeyboardEvent) {
 		if (!(event.target instanceof HTMLTextAreaElement)) {
@@ -25,6 +27,9 @@
 			}
 			if (event.code === 'KeyJ') {
 				showFooter = !showFooter;
+			}
+			if (event.code === 'KeyO') {
+				overscanMode = !overscanMode;
 			}
 		}
 	}
@@ -39,15 +44,20 @@
 	});
 </script>
 
-<PageTransition refresh={$page.toString()}>
-	<slot />
-</PageTransition>
+<div style="height: 100%" class:overscanMode>
+	<PageTransition refresh={$page.toString()}>
+		<slot />
+	</PageTransition>
+</div>
 
 <svelte:head>
 	{@html github}
 </svelte:head>
 
-<svelte:window on:keydown={handleKeydown} />
+<svelte:window
+	on:keydown={handleKeydown}
+	use:swiper={{ onLeftSwipe: () => page.next(), onRightSwipe: () => page.previous() }}
+/>
 
 {#if showFooter}
 	<FixedFooter>
@@ -78,6 +88,24 @@
 		padding: 0;
 	}
 
+	/* Just in case the screen is mobile. */
+	@media (max-width: 2048px) {
+		:global(body) {
+			font-size: 0.5em;
+		}
+	}
+
+	/* Just in case the screen is 4k. A bit hackish, but hey, gotta do what you gotta do. */
+	@media (min-width: 2048px) {
+		:global(h3) {
+			font-size: 2em;
+		}
+
+		:global(.component-selector) {
+			height: 84px !important;
+		}
+	}
+
 	:global(h1, h2, h3) {
 		/* Little hack to prevent the page from scrolling 🙈 */
 		margin: 0px;
@@ -99,5 +127,9 @@
 	/* Utility class to not have to mess much with global padding when required */
 	:global(.pad) {
 		padding: 10px;
+	}
+
+	:global(.overscanMode .pad) {
+		padding: 2%;
 	}
 </style>

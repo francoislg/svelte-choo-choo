@@ -101,9 +101,24 @@
 	}
 
 	.content {
-		/* :shrug: it works */
+		/* revert the shape transform, :shrug: it works */
 		transform: rotateZ(-45deg);
 	}
+
+	/* Adjustments to pad for 4k, just in case */
+
+	@media (min-width: 2048px)
+	{
+		.shape {
+			transform: scale(2) rotateZ(45deg);
+		}
+
+		.content {
+			margin-left: -200px;
+			transform: scale(0.5) rotateZ(-45deg);
+		}
+	}
+
 
 	.red {
 		background-color: var(--pomegranate);

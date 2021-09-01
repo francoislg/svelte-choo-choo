@@ -10,6 +10,7 @@
 <style>
 	:global(.highlight) {
 		border-radius: 5px;
+		border: 1px solid #22272e;
 		padding: 10px 10px;
 		font-size: 1.25em;
 
