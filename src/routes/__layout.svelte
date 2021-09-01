@@ -89,7 +89,7 @@
 	}
 
 	/* Just in case the screen is mobile. */
-	@media (max-width: 2048px) {
+	@media (max-width: 600px) {
 		:global(body) {
 			font-size: 0.5em;
 		}

@@ -64,5 +64,6 @@
 	h1 {
 		color: white;
 		font-size: 5em;
+		text-align: center;
 	}
 </style>
