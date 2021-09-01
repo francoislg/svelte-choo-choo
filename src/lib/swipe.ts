@@ -1,4 +1,4 @@
-export const swiper = (node, {minimumDistance = 300, onLeftSwipe, onRightSwipe}) => {
+export const swiper = (node, {minimumDistance = 200, onLeftSwipe, onRightSwipe}) => {
 	let touchstartX = 0;
 
 	node.addEventListener('touchstart', (e) => {
@@ -7,6 +7,7 @@ export const swiper = (node, {minimumDistance = 300, onLeftSwipe, onRightSwipe})
 
 	node.addEventListener('touchend', (e) => {
 		const distance = e.changedTouches[0].screenX - touchstartX;
+		console.log(distance, distance < - minimumDistance, distance > minimumDistance)
 		if (distance < -minimumDistance) onLeftSwipe();
 		if (distance > minimumDistance) onRightSwipe();
 	});
