@@ -23,7 +23,7 @@ export const swiper = (
 		onLeftSwipe,
 		onRightSwipe,
 		onSwipeUp = doNothing,
-		onSwipeDown = doNothing,
+		onSwipeDown = doNothing
 	}: SwiperParams
 ): void => {
 	let touchstartX = 0;
@@ -37,7 +37,7 @@ export const swiper = (
 
 	node.addEventListener('touchmove', (e) => {
 		const distance = e.changedTouches[0].screenX - touchstartX;
-		console.log(distance)
+		console.log(distance);
 		if (!isTriggered) {
 			if (distance < -minimumDistance) {
 				onTriggerLeftSwipe();
@@ -50,7 +50,7 @@ export const swiper = (
 		} else {
 			if (distance > -minimumDistance && distance < minimumDistance) {
 				isTriggered = false;
-				onReset()
+				onReset();
 			}
 		}
 	});

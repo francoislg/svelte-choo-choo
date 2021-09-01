@@ -14,7 +14,8 @@ import {tooltip} from "./tooltip.js";`,
 }} class="gallon">
 	Mr Gallon à mesurer
 </div>
-`, `
+`,
+			`
 .gallon {
 	margin-left: 50px;
 	margin-top: 50px;
@@ -23,8 +24,9 @@ import {tooltip} from "./tooltip.js";`,
 	background-color: #1cebcf;
 	border-radius: 5px;
 	cursor: pointer;
-}`),
-oneTypeScriptComp(
+}`
+		),
+		oneTypeScriptComp(
 			'tooltip',
 			`import Tooltip from "./Tooltip.svelte";
 
@@ -68,8 +70,9 @@ export function tooltip(node, {message, offsetY}) {
 			node.removeEventListener('mouseout', hide);
 		}
 	};
-}`),
-oneSvelteComp(
+}`
+		),
+		oneSvelteComp(
 			'Tooltip',
 			`
 export let message;
@@ -80,7 +83,8 @@ export let visible = false`,
 {#if visible}
 	<div class="tooltip" style="left: {left}px; top: {top}px">{message}</div>
 {/if}
-`, `
+`,
+			`
 .tooltip {
 	position: fixed;
 	background-color: white;
@@ -89,7 +93,8 @@ export let visible = false`,
 	border: 1px solid black;
 	transform: translate(-50%, -50%)
 }
-`)
+`
+		)
 	];
 </script>
 

@@ -78,19 +78,18 @@
 		padding-left: 10px;
 	}
 
-	@media (min-width: 2048px)
-	{
+	@media (min-width: 2048px) {
 		.code {
 			right: 1300px;
 		}
 
-		h4, li {
+		h4,
+		li {
 			font-size: 1.5em;
 		}
 	}
 
-	@media (max-width: 1024px)
-	{
+	@media (max-width: 1024px) {
 		.code {
 			left: 20px;
 			bottom: 300px;

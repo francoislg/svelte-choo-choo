@@ -65,7 +65,7 @@ const PAGES = [
 	...QOL,
 	...SvelteKit,
 	// "MissingStuff",
-	"Reflexion",
+	'Reflexion',
 	'NextSteps',
 	'Thanks',
 	'CoveoSplash'
@@ -101,6 +101,8 @@ function createPage() {
 
 export const animationDelay = writable(700);
 
-export const delayed = () => derived([animationDelay], ([value]) => (index) => value + (value * index));
+export const delayed = () =>
+	derived([animationDelay], ([value]) => (index) => value + value * index);
 
-export const delayedFaster = () => derived([animationDelay], ([value]) => (index) => value + (value / 2 * index));
+export const delayedFaster = () =>
+	derived([animationDelay], ([value]) => (index) => value + (value / 2) * index);

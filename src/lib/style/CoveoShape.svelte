@@ -46,22 +46,22 @@
 		bottom: {
 			flyY: 200,
 			bottom: `${-width / 2.5}px`,
-			right: `calc(${randomizedX()}%`,
+			right: `calc(${randomizedX()}%`
 		},
 		top: {
 			flyY: -200,
 			left: `calc(${randomizedX()}%`,
-			top:  `${-width / 2}px`,
+			top: `${-width / 2}px`
 		},
 		left: {
 			flyX: -200,
 			left: `${-width / 2.5}px`,
-			top: randomizedY() + "%"
+			top: randomizedY() + '%'
 		},
 		right: {
 			flyX: 200,
 			right: `${-width / 2.5}px`,
-			top: randomizedY() + "%",
+			top: randomizedY() + '%'
 		}
 	};
 
@@ -107,8 +107,7 @@
 
 	/* Adjustments to pad for 4k, just in case */
 
-	@media (min-width: 2048px)
-	{
+	@media (min-width: 2048px) {
 		.shape {
 			transform: scale(2) rotateZ(45deg);
 		}
@@ -119,13 +118,11 @@
 		}
 	}
 
-	@media (max-width: 600px)
-	{
+	@media (max-width: 600px) {
 		.content {
 			margin-left: 200px;
 		}
 	}
-
 
 	.red {
 		background-color: var(--pomegranate);

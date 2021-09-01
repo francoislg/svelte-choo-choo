@@ -7,7 +7,7 @@
 
 	function createHeart() {
 		const startX = Math.random() * 100;
-		return { id: index++, left: startX + "%", bottom: "0px", duration: 5000 };
+		return { id: index++, left: startX + '%', bottom: '0px', duration: 5000 };
 	}
 
 	// Not super clean, but hey, works OK!

@@ -7,7 +7,7 @@
 	let showRight;
 
 	export let onSwipeUp;
-    export let onSwipeDown;
+	export let onSwipeDown;
 
 	function reset() {
 		showLeft = false;
@@ -29,7 +29,7 @@
 		onTriggerRightSwipe: () => (showLeft = true),
 		onReset: reset,
 		onSwipeUp: onSwipeUp,
-        onSwipeDown: onSwipeDown,
+		onSwipeDown: onSwipeDown
 	}}
 />
 

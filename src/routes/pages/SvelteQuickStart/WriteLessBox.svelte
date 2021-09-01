@@ -14,9 +14,8 @@
 		>
 			<a href="https://svelte.dev/blog/write-less-code"
 				><h2>Write less code</h2>
-				<p>
-					Une métrique de code qui était autrefois inutile
-				</p>
+				<p>Une métrique de code qui était autrefois inutile</p>
+			</a>
 		</div>
 	</div>
 </div>
@@ -37,7 +36,6 @@
 		width: 100%;
 		font-size: 3em;
 	}
-
 
 	.box.svelte-1377vhn a {
 		color: white;

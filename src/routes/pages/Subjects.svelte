@@ -13,7 +13,7 @@
 	import Purse from '$lib/icons/purse.svelte';
 	import Partner from '$lib/icons/partner.svelte';
 	import React from '$lib/icons/reactjs-icon.svelte';
-import SvelteLogo from '$lib/icons/svelte-icon.svelte';
+	import SvelteLogo from '$lib/icons/svelte-icon.svelte';
 
 	const delay = delayedFaster();
 </script>
@@ -50,7 +50,7 @@ import SvelteLogo from '$lib/icons/svelte-icon.svelte';
 		</Grid>
 	</div>
 	<div class="subjects">
-		<h3 in:fly={{delay: $delay(9)}}>Exemples aujourd'hui, de la vraie vie vraie</h3>
+		<h3 in:fly={{ delay: $delay(9) }}>Exemples aujourd'hui, de la vraie vie vraie</h3>
 		<Grid twoColumns>
 			<div in:fly={{ delay: $delay(9) }}>
 				<Card>React<React slot="icon" /></Card>

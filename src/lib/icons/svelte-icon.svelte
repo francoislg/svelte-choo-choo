@@ -10,7 +10,7 @@
 </script>
 
 <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 103 124">
-	<g in:fade={{delay: delay}} out:fade={{ duration: 200 }}>
+	<g in:fade={{ delay: delay }} out:fade={{ duration: 200 }}>
 		<path
 			in:expand={{ duration: duration - 200, delay: duration + delay, easing: quintOut }}
 			style="stroke: #ff3e00; fill: #ff3e00; stroke-width: 50;"

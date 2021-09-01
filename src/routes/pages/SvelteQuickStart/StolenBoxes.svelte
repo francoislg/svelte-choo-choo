@@ -116,7 +116,7 @@
 		flex-direction: column;
 		border-bottom: none;
 	}
-	
+
 	a {
 		text-decoration: none;
 	}

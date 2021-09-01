@@ -1,6 +1,6 @@
 <script>
 	import CoveoIcon from '$lib/icons/coveo-icon.svelte';
-import PresentationLink from '$lib/PresentationLink.svelte';
+	import PresentationLink from '$lib/PresentationLink.svelte';
 	import SplashScreen from '$lib/SplashScreen.svelte';
 	import CoveoShape from '$lib/style/CoveoShape.svelte';
 </script>
@@ -9,7 +9,7 @@ import PresentationLink from '$lib/PresentationLink.svelte';
 	<div class="pad logo">
 		<CoveoIcon />
 	</div>
-	<PresentationLink color='black' />
+	<PresentationLink color="black" />
 </SplashScreen>
 
 <CoveoShape width={800} color="red" position="right" />
