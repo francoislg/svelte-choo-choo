@@ -10,6 +10,7 @@
 	import { getLayoutContext, setLayoutContext } from '../lib/LayoutContext';
 	import CoveoLogo from '../lib/CoveoLogo.svelte';
 	import { swiper } from '../lib/swipe';
+import SimpleSwiper from '../lib/SimpleSwiper.svelte';
 
 	setLayoutContext();
 	const layoutContext = getLayoutContext();
@@ -55,9 +56,9 @@
 </svelte:head>
 
 <svelte:window
-	on:keydown={handleKeydown}
-	use:swiper={{ onLeftSwipe: () => page.next(), onRightSwipe: () => page.previous() }}
-/>
+	on:keydown={handleKeydown} />
+
+<SimpleSwiper />
 
 {#if showFooter}
 	<FixedFooter>
