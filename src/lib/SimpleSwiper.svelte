@@ -1,11 +1,13 @@
 <script>
 	import { fade, fly } from 'svelte/transition';
-
 	import { page } from './page';
-
 	import { swiper } from './swipe';
+
 	let showLeft;
 	let showRight;
+
+	export let onSwipeUp;
+    export let onSwipeDown;
 
 	function reset() {
 		showLeft = false;
@@ -25,7 +27,9 @@
 		},
 		onTriggerLeftSwipe: () => (showRight = true),
 		onTriggerRightSwipe: () => (showLeft = true),
-		onReset: reset
+		onReset: reset,
+		onSwipeUp: onSwipeUp,
+        onSwipeDown: onSwipeDown,
 	}}
 />
 

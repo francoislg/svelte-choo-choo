@@ -7,6 +7,8 @@ export interface SwiperParams {
 	onTriggerLeftSwipe?: () => void;
 	onTriggerRightSwipe?: () => void;
 	onReset?: () => void;
+	onSwipeUp?: () => void;
+	onSwipeDown?: () => void;
 	onLeftSwipe: () => void;
 	onRightSwipe: () => void;
 }
@@ -19,14 +21,18 @@ export const swiper = (
 		onTriggerRightSwipe = doNothing,
 		onReset = doNothing,
 		onLeftSwipe,
-		onRightSwipe
+		onRightSwipe,
+		onSwipeUp = doNothing,
+		onSwipeDown = doNothing,
 	}: SwiperParams
 ): void => {
 	let touchstartX = 0;
+	let touchStartY = 0;
 	let isTriggered = false;
 
 	node.addEventListener('touchstart', (e) => {
 		touchstartX = e.changedTouches[0].screenX;
+		touchStartY = e.changedTouches[0].screenY;
 	});
 
 	node.addEventListener('touchmove', (e) => {
@@ -53,6 +59,10 @@ export const swiper = (
 		const distance = e.changedTouches[0].screenX - touchstartX;
 		if (distance < -minimumDistance) onLeftSwipe();
 		if (distance > minimumDistance) onRightSwipe();
+
+		const distanceY = e.changedTouches[0].screenY - touchStartY;
+		if (distanceY < -minimumDistance) onSwipeUp();
+		if (distanceY > minimumDistance) onSwipeDown();
 
 		isTriggered = false;
 	});

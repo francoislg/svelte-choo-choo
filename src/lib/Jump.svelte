@@ -11,3 +11,4 @@
 </script>
 
 <input type="number" bind:value min={0} max={NUMBER_OF_PAGES} on:keydown={onKeyDown} />
+<button>Go</button>

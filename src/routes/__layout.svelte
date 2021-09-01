@@ -9,8 +9,7 @@
 	import Jump from '../lib/Jump.svelte';
 	import { getLayoutContext, setLayoutContext } from '../lib/LayoutContext';
 	import CoveoLogo from '../lib/CoveoLogo.svelte';
-	import { swiper } from '../lib/swipe';
-import SimpleSwiper from '../lib/SimpleSwiper.svelte';
+	import SimpleSwiper from '../lib/SimpleSwiper.svelte';
 
 	setLayoutContext();
 	const layoutContext = getLayoutContext();
@@ -55,10 +54,9 @@ import SimpleSwiper from '../lib/SimpleSwiper.svelte';
 	{@html github}
 </svelte:head>
 
-<svelte:window
-	on:keydown={handleKeydown} />
+<svelte:window on:keydown={handleKeydown} />
 
-<SimpleSwiper />
+<SimpleSwiper onSwipeUp={() => (showFooter = true)} onSwipeDown={() => (showFooter = false)} />
 
 {#if showFooter}
 	<FixedFooter>
