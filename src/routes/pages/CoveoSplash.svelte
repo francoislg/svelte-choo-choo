@@ -16,6 +16,6 @@
 
 <style>
 	.logo {
-		width: 25%;
+		width: 40vh;
 	}
 </style>

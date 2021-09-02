@@ -96,12 +96,17 @@
 
 	/* Just in case the screen is 4k. A bit hackish, but hey, gotta do what you gotta do. */
 	@media (min-width: 2048px) {
-		:global(h3) {
+		:global(h3, h4, body) {
 			font-size: 2em;
 		}
 
-		:global(.component-selector) {
+		/* For the REPL */
+		:global(.repl .component-selector) {
 			height: 84px !important;
+		}
+
+		:global(.repl section) {
+			padding-top: 84px !important;
 		}
 	}
 

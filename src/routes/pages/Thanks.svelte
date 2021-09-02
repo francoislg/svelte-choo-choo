@@ -96,4 +96,12 @@
 			right: auto;
 		}
 	}
+
+	@media (max-width: 600px) {
+		.code {
+			left: 20px;
+			bottom: 200px;
+			right: auto;
+		}
+	}
 </style>

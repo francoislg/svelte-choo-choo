@@ -81,4 +81,10 @@
 		left: 10%;
 		top: 50px;
 	}
+
+	@media (min-width: 2048px) {
+		.title {
+			font-size: 2em;
+		}
+	}
 </style>
