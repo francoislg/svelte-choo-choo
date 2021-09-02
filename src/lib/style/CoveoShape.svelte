@@ -107,7 +107,7 @@
 
 	/* Adjustments to pad for 4k, just in case */
 
-	@media (min-width: 2048px) {
+	@media (min-width: 2600px) {
 		.shape {
 			transform: scale(2) rotateZ(45deg);
 		}

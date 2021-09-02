@@ -82,7 +82,7 @@
 		top: 50px;
 	}
 
-	@media (min-width: 2048px) {
+	@media (min-width: 2600px) {
 		.title {
 			font-size: 2em;
 		}

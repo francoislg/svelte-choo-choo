@@ -78,7 +78,7 @@
 		padding-left: 10px;
 	}
 
-	@media (min-width: 2048px) {
+	@media (min-width: 2600px) {
 		.code {
 			right: 1300px;
 		}

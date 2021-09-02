@@ -14,7 +14,8 @@
 		padding: 10px 10px;
 		font-size: 1.25em;
 
-		width: 70%;
+		min-width: 70%;
+		width: max-content;
 		tab-size: 4;
 	}
 

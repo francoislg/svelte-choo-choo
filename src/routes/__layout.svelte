@@ -95,7 +95,7 @@
 	}
 
 	/* Just in case the screen is 4k. A bit hackish, but hey, gotta do what you gotta do. */
-	@media (min-width: 2048px) {
+	@media (min-width: 2600px) {
 		:global(h3, h4, body) {
 			font-size: 2em;
 		}
