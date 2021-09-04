@@ -48,4 +48,11 @@
 		height: 100%;
 		width: 30vh;
 	}
+
+	/* Last second patch... sorry mobile! */ 
+	@media (max-width: 600px) {
+		.train {
+			display: none;
+		}
+	}
 </style>

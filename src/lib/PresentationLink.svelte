@@ -15,6 +15,11 @@
 			>https://github.com/francoislg/svelte-choo-choo</a
 		>
 	</div>
+	<div>
+		<a style="color: {color}" href="https://twitter.com/fralachgui"
+			>@fralachgui</a
+		>
+	</div>
 </div>
 
 <style>
