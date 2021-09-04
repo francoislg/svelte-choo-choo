@@ -5,7 +5,7 @@
 
 <div class="pad">
 	<h3>Stores - Svelte Way</h3>
-	<CodeHighlight code={`export const count = writable(0);\n$count = 1;`} />
+	<CodeHighlight code={`export const count = writable(0);\n$count = 1;\n\n<div>{$count}</div>`} />
 	<CodeHighlight
 		code={`export const time = readable(new Date(), function start(set) {
 	const interval = setInterval(() => {
@@ -15,13 +15,13 @@
 	return function stop() {
 		clearInterval(interval);
 	};
-});`}
+});\n\n<div>{$time}</div>`}
 	/>
 	<CodeHighlight
 		code={`export const elapsed = derived(
 	time,
 	$time => Math.round(($time - start) / 1000)
-);`}
+);\n\n<div>{$elapsed}</div>`}
 	/>
 	<CodeHighlight
 		code={`function createCount() {
@@ -33,7 +33,12 @@
 		decrement: () => update(n => n - 1),
 		reset: () => set(0)
 	};
-}`}
+}
+
+const counter = createCount();
+
+<button on:click={() => counter.increment()} />
+`}
 	/>
 </div>
 

@@ -5,19 +5,17 @@
 	const components = onlyOneSvelteComp(
 		`
 	let color = 'blue';
-	let colored = false;`,
+	let isColored = false;`,
 		`
-<div class="square" class:colored></div>
-<div><input type="checkbox" bind:checked={colored} /></div>
-
-<div class="square colored {color}"></div>
-<div><input bind:value={color} /></div>
+<div class="square" class:colored={isColored}></div>
+<div><label><input type="checkbox" bind:checked={isColored} />Appliquer la classe</label></div>
 `,
 		`
 .square { width: 50px; height: 50px; border: 2px solid black }
 .colored {background-color: orange}
-.colored.red { background-color: red}
-.colored.blue { background-color: blue}`
+input {
+	margin-right: 5px;
+}`
 	);
 </script>
 

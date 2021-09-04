@@ -25,7 +25,8 @@ const Stores = [
 	'Stores/Svelte',
 	// "Stores/SvelteExample",
 	// "Stores/IRLExampleHistory",
-	'Stores/IRLExamplePopup'
+	'Stores/IRLExamplePopup',
+	'Stores/Context',
 ];
 
 const Await = ['Await/SplashScreen', 'Await/React', 'Await/Svelte'];
@@ -43,7 +44,6 @@ const Slots = [
 const QOL = [
 	'QOL/SplashScreen',
 	'QOL/Class',
-	'QOL/Context',
 	'QOL/Actions'
 	// "QOL/SVG",
 ];
