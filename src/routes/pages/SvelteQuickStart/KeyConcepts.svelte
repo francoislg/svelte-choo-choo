@@ -19,9 +19,11 @@
 
 	<h3>export let</h3>
 	<CodeHighlight
-		code={`export let thisispublic = 'x';
-let thisisprivate = 'y';
-`}
+		code={'// Child.svelte\n' +
+		     wrapScript("\nexport let thisispublic = 'x';\nlet thisisprivate = true;") +
+			'\n\n// Parent.svelte' +
+			'\n' + wrapScript("\nimport Child from './Child.svelte'") +
+			"\n<Child thisispublic='woohoo' />"}
 	/>
 </div>
 
